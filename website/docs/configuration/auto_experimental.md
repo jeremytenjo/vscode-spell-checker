@@ -1,6 +1,6 @@
 ---
 # AUTO-GENERATED ALL CHANGES WILL BE LOST
-# See `_scripts/extract-config.mjs`
+# See `_scripts/extract-config.mts`
 title: Experimental
 id: experimental
 ---
@@ -10,10 +10,63 @@ id: experimental
 Experimental settings that may change or be removed in the future.
 
 
-| Setting | Scope | Description |
-| ------- | ----- | ----------- |
-| [`cSpell.experimental.enableRegexpView`](#cspellexperimentalenableregexpview) | application | Show Regular Expression Explorer |
-| [`cSpell.experimental.symbols`](#cspellexperimentalsymbols) | application | Experiment with `executeDocumentSymbolProvider` |
+<table>
+<thead>
+<tr>
+<th>
+
+Setting
+
+</th>
+<th>
+
+Scope
+
+</th>
+<th>
+
+Description
+
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+[`cSpell.experimental.enableRegexpView`](#cspellexperimentalenableregexpview)
+
+</td>
+<td>
+
+application
+
+</td>
+<td>
+
+Show Regular Expression Explorer
+
+</td>
+</tr>
+<tr>
+<td>
+
+[`cSpell.experimental.symbols`](#cspellexperimentalsymbols)
+
+</td>
+<td>
+
+application
+
+</td>
+<td>
+
+Experiment with `executeDocumentSymbolProvider`
+
+</td>
+</tr>
+</tbody>
+</table>
 
 
 ## Settings
@@ -154,7 +207,7 @@ reporting unknown words as suggestions. Common spelling errors are still flagged
 - `typos` - report on known typo words and the rest as suggestions
 - `flagged` - report only flagged words as misspelled
 
-**Note:** This setting is deprecated. Use [`cSpell.unknownWords`](cspell#cspellunknownwords) instead.
+**Note:** This setting is deprecated. Use [`cSpell.unknownWords`](reporting-and-display#cspellunknownwords) instead.
 
 </dd>
 
@@ -162,6 +215,29 @@ reporting unknown words as suggestions. Common spelling errors are still flagged
 Type
 </dt>
 <dd>
+
+**Any of:**
+
+<ul>
+
+<li>
+
+`"all"`
+</li>
+<li>
+
+`"simple"`
+</li>
+<li>
+
+`"typos"`
+</li>
+<li>
+
+`"flagged"`
+</li>
+
+</ul>
 
 `( "all" | "simple" | "typos" | "flagged" )`
 

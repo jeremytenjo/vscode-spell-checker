@@ -1,6 +1,6 @@
 ---
 # AUTO-GENERATED ALL CHANGES WILL BE LOST
-# See `_scripts/extract-config.mjs`
+# See `_scripts/extract-config.mts`
 title: Reporting and Display
 id: reporting-and-display
 ---
@@ -10,26 +10,284 @@ id: reporting-and-display
 Settings that control how the spell checker reports and displays errors.
 
 
-| Setting | Scope | Description |
-| ------- | ----- | ----------- |
-| [`cSpell.autocorrect`](#cspellautocorrect) | resource | Autocorrect |
-| [`cSpell.autoFormatConfigFile`](#cspellautoformatconfigfile) | window | Auto Format Configuration File |
-| [`cSpell.diagnosticLevel`](#cspelldiagnosticlevel) | resource | Set Diagnostic Reporting Level |
-| [`cSpell.diagnosticLevelFlaggedWords`](#cspelldiagnosticlevelflaggedwords) | resource | Set Diagnostic Reporting Level for Flagged Words |
-| [`cSpell.enabledNotifications`](#cspellenablednotifications) | resource | Enabled Notifications |
-| [`cSpell.hideAddToDictionaryCodeActions`](#cspellhideaddtodictionarycodeactions) | resource | Hide the options to add words to dictionaries or settings. |
-| [`cSpell.hideIssuesWhileTyping`](#cspellhideissueswhiletyping) | application | Hide Issues While Typing |
-| [`cSpell.maxDuplicateProblems`](#cspellmaxduplicateproblems) | resource | The maximum number of times the same word can be flagged as an error in a file. |
-| [`cSpell.maxNumberOfProblems`](#cspellmaxnumberofproblems) | resource | Controls the maximum number of spelling errors per document. |
-| [`cSpell.minWordLength`](#cspellminwordlength) | resource | The minimum length of a word before checking it against a dictionary. |
-| [`cSpell.numSuggestions`](#cspellnumsuggestions) | resource | Controls the number of suggestions shown. |
-| [`cSpell.revealIssuesAfterDelayMS`](#cspellrevealissuesafterdelayms) | application | Reveal Issues After a Delay in Milliseconds |
-| [`cSpell.showAutocompleteDirectiveSuggestions`](#cspellshowautocompletedirectivesuggestions) | language-overridable | Show CSpell in-document directives as you type. |
-| [`cSpell.showCommandsInEditorContextMenu`](#cspellshowcommandsineditorcontextmenu) | application | Show Spell Checker actions in Editor Context Menu |
-| [`cSpell.showSuggestionsLinkInEditorContextMenu`](#cspellshowsuggestionslinkineditorcontextmenu) | application | Show Spelling Suggestions link in the top level context menu. |
-| [`cSpell.suggestionMenuType`](#cspellsuggestionmenutype) | resource | The type of menu used to display spelling suggestions. |
-| [`cSpell.suggestionNumChanges`](#cspellsuggestionnumchanges) | resource | The maximum number of changes allowed on a word to be considered a suggestions. |
-| [`cSpell.validateDirectives`](#cspellvalidatedirectives) | window | Verify that the in-document directives are correct. |
+<table>
+<thead>
+<tr>
+<th>
+
+Setting
+
+</th>
+<th>
+
+Scope
+
+</th>
+<th>
+
+Description
+
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+[`cSpell.autocorrect`](#cspellautocorrect)
+
+</td>
+<td>
+
+resource
+
+</td>
+<td>
+
+Autocorrect
+
+</td>
+</tr>
+<tr>
+<td>
+
+[`cSpell.autoFormatConfigFile`](#cspellautoformatconfigfile)
+
+</td>
+<td>
+
+window
+
+</td>
+<td>
+
+Auto Format Configuration File
+
+</td>
+</tr>
+<tr>
+<td>
+
+[`cSpell.diagnosticLevel`](#cspelldiagnosticlevel)
+
+</td>
+<td>
+
+resource
+
+</td>
+<td>
+
+Set Diagnostic Reporting Level
+
+</td>
+</tr>
+<tr>
+<td>
+
+[`cSpell.diagnosticLevelFlaggedWords`](#cspelldiagnosticlevelflaggedwords)
+
+</td>
+<td>
+
+resource
+
+</td>
+<td>
+
+Set Diagnostic Reporting Level for Flagged Words
+
+</td>
+</tr>
+<tr>
+<td>
+
+[`cSpell.enabledNotifications`](#cspellenablednotifications)
+
+</td>
+<td>
+
+resource
+
+</td>
+<td>
+
+Enabled Notifications
+
+</td>
+</tr>
+<tr>
+<td>
+
+[`cSpell.hideIssuesWhileTyping`](#cspellhideissueswhiletyping)
+
+</td>
+<td>
+
+application
+
+</td>
+<td>
+
+Hide Issues While Typing
+
+</td>
+</tr>
+<tr>
+<td>
+
+[`cSpell.maxDuplicateProblems`](#cspellmaxduplicateproblems)
+
+</td>
+<td>
+
+resource
+
+</td>
+<td>
+
+The maximum number of times the same word can be flagged as an error in a file.
+
+</td>
+</tr>
+<tr>
+<td>
+
+[`cSpell.maxNumberOfProblems`](#cspellmaxnumberofproblems)
+
+</td>
+<td>
+
+resource
+
+</td>
+<td>
+
+Controls the maximum number of spelling errors per document.
+
+</td>
+</tr>
+<tr>
+<td>
+
+[`cSpell.minWordLength`](#cspellminwordlength)
+
+</td>
+<td>
+
+resource
+
+</td>
+<td>
+
+The minimum length of a word before checking it against a dictionary.
+
+</td>
+</tr>
+<tr>
+<td>
+
+[`cSpell.numSuggestions`](#cspellnumsuggestions)
+
+</td>
+<td>
+
+resource
+
+</td>
+<td>
+
+Controls the number of suggestions shown.
+
+</td>
+</tr>
+<tr>
+<td>
+
+[`cSpell.revealIssuesAfterDelayMS`](#cspellrevealissuesafterdelayms)
+
+</td>
+<td>
+
+application
+
+</td>
+<td>
+
+Reveal Issues After a Delay in Milliseconds
+
+</td>
+</tr>
+<tr>
+<td>
+
+[`cSpell.showAutocompleteDirectiveSuggestions`](#cspellshowautocompletedirectivesuggestions)
+
+</td>
+<td>
+
+language-overridable
+
+</td>
+<td>
+
+Show CSpell in-document directives as you type.
+
+</td>
+</tr>
+<tr>
+<td>
+
+[`cSpell.suggestionNumChanges`](#cspellsuggestionnumchanges)
+
+</td>
+<td>
+
+resource
+
+</td>
+<td>
+
+The maximum number of changes allowed on a word to be considered a suggestions.
+
+</td>
+</tr>
+<tr>
+<td>
+
+[`cSpell.unknownWords`](#cspellunknownwords)
+
+</td>
+<td>
+
+resource
+
+</td>
+<td>
+
+Controls how unknown words are handled.
+
+</td>
+</tr>
+<tr>
+<td>
+
+[`cSpell.validateDirectives`](#cspellvalidatedirectives)
+
+</td>
+<td>
+
+window
+
+</td>
+<td>
+
+Verify that the in-document directives are correct.
+
+</td>
+</tr>
+</tbody>
+</table>
 
 
 ## Settings
@@ -177,6 +435,29 @@ Type
 </dt>
 <dd>
 
+**Any of:**
+
+<ul>
+
+<li>
+
+`"Error"`
+</li>
+<li>
+
+`"Warning"`
+</li>
+<li>
+
+`"Information"`
+</li>
+<li>
+
+`"Hint"`
+</li>
+
+</ul>
+
 `( "Error" | "Warning" | "Information" | "Hint" )`
 | Value | Description |
 | ----- | ----------- |
@@ -239,6 +520,29 @@ See: [VS Code Diagnostic Severity Level](https://code.visualstudio.com/api/refer
 Type
 </dt>
 <dd>
+
+**Any of:**
+
+<ul>
+
+<li>
+
+`"Error"`
+</li>
+<li>
+
+`"Warning"`
+</li>
+<li>
+
+`"Information"`
+</li>
+<li>
+
+`"Hint"`
+</li>
+
+</ul>
 
 `( "Error" | "Warning" | "Information" | "Hint" )`
 | Value | Description |
@@ -314,7 +618,7 @@ Type
 </dt>
 <dd>
 
-`object`
+[`EnabledNotifications`](#enablednotifications)
 
 </dd>
 
@@ -332,10 +636,11 @@ Default
 </dt>
 <dd>
 
-```json5
+```json5 title="default"
 {
-"Average Word Length too Long": true, "Lines too Long": true,
-"Maximum Word Length Exceeded": true
+  "Average Word Length too Long": true,
+  "Lines too Long": true,
+  "Maximum Word Length Exceeded": true
 }
 ```
 
@@ -347,60 +652,6 @@ Since Extension Version
 <dd>
 
 4.0.41
-
-</dd>
-
-</dl>
-
----
-
-
-### `cSpell.hideAddToDictionaryCodeActions`
-
-<dl>
-
-<dt>
-Name
-</dt>
-<dd>
-
-`cSpell.hideAddToDictionaryCodeActions`
-
-</dd>
-
-<dt>
-Description
-</dt>
-<dd>
-
-Hide the options to add words to dictionaries or settings.
-
-</dd>
-
-<dt>
-Type
-</dt>
-<dd>
-
-`boolean`
-
-</dd>
-
-<dt>
-Scope
-</dt>
-<dd>
-
-resource - Resource settings, which apply to files and folders, and can be configured in all settings levels, even folder settings.
-
-</dd>
-
-<dt>
-Default
-</dt>
-<dd>
-
-_`false`_
 
 </dd>
 
@@ -436,6 +687,29 @@ See: [`cSpell.revealIssuesAfterDelayMS`](reporting-and-display#cspellrevealissue
 Type
 </dt>
 <dd>
+
+**Any of:**
+
+<ul>
+
+<li>
+
+`"Off"`
+</li>
+<li>
+
+`"Word"`
+</li>
+<li>
+
+`"Line"`
+</li>
+<li>
+
+`"Document"`
+</li>
+
+</ul>
 
 `( "Off" | "Word" | "Line" | "Document" )`
 | Value | Description |
@@ -814,172 +1088,6 @@ _`true`_
 ---
 
 
-### `cSpell.showCommandsInEditorContextMenu`
-
-<dl>
-
-<dt>
-Name
-</dt>
-<dd>
-
-`cSpell.showCommandsInEditorContextMenu`
-
-</dd>
-
-<dt>
-Description
-</dt>
-<dd>
-
-Show Spell Checker actions in Editor Context Menu
-
-</dd>
-
-<dt>
-Type
-</dt>
-<dd>
-
-`boolean`
-
-</dd>
-
-<dt>
-Scope
-</dt>
-<dd>
-
-application - Settings that apply to all instances of VS Code and can only be configured in user settings.
-
-</dd>
-
-<dt>
-Default
-</dt>
-<dd>
-
-_`true`_
-
-</dd>
-
-</dl>
-
----
-
-
-### `cSpell.showSuggestionsLinkInEditorContextMenu`
-
-<dl>
-
-<dt>
-Name
-</dt>
-<dd>
-
-`cSpell.showSuggestionsLinkInEditorContextMenu`
-
-</dd>
-
-<dt>
-Description
-</dt>
-<dd>
-
-Show Spelling Suggestions link in the top level context menu.
-
-</dd>
-
-<dt>
-Type
-</dt>
-<dd>
-
-`boolean`
-
-</dd>
-
-<dt>
-Scope
-</dt>
-<dd>
-
-application - Settings that apply to all instances of VS Code and can only be configured in user settings.
-
-</dd>
-
-<dt>
-Default
-</dt>
-<dd>
-
-_`true`_
-
-</dd>
-
-</dl>
-
----
-
-
-### `cSpell.suggestionMenuType`
-
-<dl>
-
-<dt>
-Name
-</dt>
-<dd>
-
-`cSpell.suggestionMenuType`
-
-</dd>
-
-<dt>
-Description
-</dt>
-<dd>
-
-The type of menu used to display spelling suggestions.
-
-</dd>
-
-<dt>
-Type
-</dt>
-<dd>
-
-`( "quickPick" | "quickFix" )`
-| Value | Description |
-| ----- | ----------- |
-| `quickPick` | Suggestions will appear as a drop down at the top of the IDE. (Best choice for Vim Key Bindings) |
-| `quickFix` | Suggestions will appear inline near the word, inside the text editor. |
-
-</dd>
-
-<dt>
-Scope
-</dt>
-<dd>
-
-resource - Resource settings, which apply to files and folders, and can be configured in all settings levels, even folder settings.
-
-</dd>
-
-<dt>
-Default
-</dt>
-<dd>
-
-_`"quickPick"`_
-
-</dd>
-
-</dl>
-
----
-
-
 ### `cSpell.suggestionNumChanges`
 
 <dl>
@@ -1030,6 +1138,88 @@ Default
 <dd>
 
 _`3`_
+
+</dd>
+
+</dl>
+
+---
+
+
+### `cSpell.unknownWords`
+
+<dl>
+
+<dt>
+Name
+</dt>
+<dd>
+
+`cSpell.unknownWords`
+
+</dd>
+
+<dt>
+Description
+</dt>
+<dd>
+
+Controls how unknown words are handled.
+
+- `report-all` - Report all unknown words (default behavior)
+- `report-simple` - Report unknown words that have simple spelling errors, typos, and flagged words.
+- `report-common-typos` - Report unknown words that are common typos and flagged words.
+- `report-flagged` - Report unknown words that are flagged.
+
+</dd>
+
+<dt>
+Type
+</dt>
+<dd>
+
+**Any of:**
+
+<ul>
+
+<li>
+
+`"report-all"`
+</li>
+<li>
+
+`"report-simple"`
+</li>
+<li>
+
+`"report-common-typos"`
+</li>
+<li>
+
+`"report-flagged"`
+</li>
+
+</ul>
+
+`( "report-all" | "report-simple" | "report-common-typos" | "report-flagged" )`
+
+</dd>
+
+<dt>
+Scope
+</dt>
+<dd>
+
+resource - Resource settings, which apply to files and folders, and can be configured in all settings levels, even folder settings.
+
+</dd>
+
+<dt>
+Default
+</dt>
+<dd>
+
+_- none -_
 
 </dd>
 
@@ -1090,5 +1280,188 @@ _- none -_
 </dl>
 
 ---
+
+
+## Type Definitions
+
+
+### `EnabledNotifications`
+
+<dl>
+
+<dt>
+Name
+</dt>
+<dd>
+
+EnabledNotifications
+
+</dd>
+
+<dt>
+Description
+</dt>
+<dd>
+
+Control which notifications are displayed.
+
+See:
+- [`cSpell.blockCheckingWhenLineLengthGreaterThan`](performance#cspellblockcheckingwhenlinelengthgreaterthan)
+- [`cSpell.blockCheckingWhenTextChunkSizeGreaterThan`](performance#cspellblockcheckingwhentextchunksizegreaterthan)
+- [`cSpell.blockCheckingWhenAverageChunkSizeGreaterThan`](performance#cspellblockcheckingwhenaveragechunksizegreaterthan)
+
+</dd>
+
+<dt>
+Type
+</dt>
+<dd>
+
+<table>
+<thead>
+<tr>
+<th>
+
+Fields
+
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+<dl>
+
+<dt>
+Name
+</dt>
+<dd>
+
+`Average Word Length too Long`
+
+</dd>
+
+<dt>
+Description
+</dt>
+<dd>
+
+Enable notifications if the average word size is too high.
+
+</dd>
+
+<dt>
+Type
+</dt>
+<dd>
+
+`boolean`
+
+</dd>
+
+</dl>
+
+</td>
+</tr>
+<tr>
+<td>
+
+<dl>
+
+<dt>
+Name
+</dt>
+<dd>
+
+`Lines too Long`
+
+</dd>
+
+<dt>
+Description
+</dt>
+<dd>
+
+Enable notifications if the line is too long.
+
+</dd>
+
+<dt>
+Type
+</dt>
+<dd>
+
+`boolean`
+
+</dd>
+
+</dl>
+
+</td>
+</tr>
+<tr>
+<td>
+
+<dl>
+
+<dt>
+Name
+</dt>
+<dd>
+
+`Maximum Word Length Exceeded`
+
+</dd>
+
+<dt>
+Description
+</dt>
+<dd>
+
+Enable notifications if the maximum word length is exceeded.
+
+</dd>
+
+<dt>
+Type
+</dt>
+<dd>
+
+`boolean`
+
+</dd>
+
+</dl>
+
+</td>
+</tr>
+</tbody>
+</table>
+
+```ts
+{
+  "Average Word Length too Long"?: boolean;
+  "Lines too Long"?: boolean;
+  "Maximum Word Length Exceeded"?: boolean;
+}
+```
+
+</dd>
+
+<dt>
+Since Extension Version
+</dt>
+<dd>
+
+4.0.41
+
+</dd>
+
+</dl>
+
+---
+
+
 
 

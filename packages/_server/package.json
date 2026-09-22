@@ -31,15 +31,15 @@
     }
   },
   "devDependencies": {
-    "@cspell/cspell-pipe": "^10.2.2",
-    "@cspell/cspell-types": "^10.2.2",
-    "@cspell/url": "^10.2.2",
+    "@cspell/cspell-pipe": "^10.3.1",
+    "@cspell/cspell-types": "^10.3.1",
+    "@cspell/url": "^10.3.1",
     "@internal/common-utils": "file:../__utils",
-    "cspell-config-lib": "^10.2.2",
-    "cspell-gitignore": "^10.2.2",
-    "cspell-glob": "^10.2.2",
-    "cspell-io": "^10.2.2",
-    "cspell-lib": "^10.2.2",
+    "cspell-config-lib": "^10.3.1",
+    "cspell-gitignore": "^10.3.1",
+    "cspell-glob": "^10.3.1",
+    "cspell-io": "^10.3.1",
+    "cspell-lib": "^10.3.1",
     "gensequence": "^8.0.8",
     "json-rpc-api": "file:../json-rpc-api",
     "rxjs": "^7.8.2",
@@ -53,14 +53,14 @@
     "vscode-uri": "^3.2.0"
   },
   "dependencies": {
-    "@cspell/cspell-bundled-dicts": "^10.2.2"
+    "@cspell/cspell-bundled-dicts": "^10.3.1"
   },
   "scripts": {
     "build": "tsdown && npm run build:tsc && npm run build-schema",
     "build-production": "npm run clean-build-production",
-    "build-schema": "node ./scripts/build-schema.mjs",
+    "build-schema": "node ./scripts/build-schema.mts",
     "build:production": "tsdown --production --minify && npm run build-schema",
-    "build:tsc": "tsc -p tsconfig.test.json",
+    "build:tsc": "tsc -p tsconfig.test.json && tsc -p scripts",
     "clean-build-production": "npm run clean && npm run build:production",
     "clean-build": "npm run clean && npm run build",
     "clean": "shx rm -rf dist temp out coverage lib",

@@ -1,4 +1,3 @@
-// @ts-check
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -26,12 +25,13 @@ const rootDir = fileURLToPath(new URL('..', import.meta.url));
  * --validation-keywords since
  * -o spell-checker-config.schema.json
  */
-const config = defConfig({
+const config: tsj.Config = {
     path: p('src/config/cspellConfig/cspellConfig.mts'),
     tsconfig: p('tsconfig.schema.json'),
     type: 'SpellCheckerSettingsVSCode',
     topRef: false,
     expose: 'none',
+    skipTypeCheck: true,
     markdownDescription: true,
     sortProps: true,
     extraTags: [
@@ -41,42 +41,37 @@ const config = defConfig({
         'deprecationMessage',
         'enumDescriptions',
         'deprecated',
+        'note',
         'order',
         'since',
         'sinceVersion',
     ],
-});
+};
 
-const outputPath = p('spell-checker-config.schema.json');
+const configWeb: tsj.Config = {
+    ...config,
+    topRef: true,
+    expose: 'export',
+};
 
-const schema = tsj.createGenerator(config).createSchema(config.type);
-const schemaString = stringify(schema, null, 2) + '\n';
-await fs.writeFile(outputPath, cleanJson(schemaString));
-
-/**
- *
- * @param {string} filePath
- * @returns
- */
-function p(filePath) {
+function p(filePath: string): string {
     return path.resolve(rootDir, filePath);
 }
 
-/**
- *
- * @param {tsj.Config} a
- * @returns {tsj.Config}
- */
-function defConfig(a) {
-    return a;
-}
-
-/**
- *
- * @param {string} json
- * @returns
- */
-function cleanJson(json) {
+function cleanJson(json: string): string {
     /** Remove zero width space */
     return json.replaceAll(/\u200B/g, '');
 }
+
+async function genSchema(config: tsj.Config, outputPath: string) {
+    const schema = tsj.createGenerator(config).createSchema(config.type);
+    const schemaString = stringify(schema, null, 2) + '\n';
+    await fs.writeFile(outputPath, cleanJson(schemaString));
+}
+
+async function run() {
+    await genSchema(config, p('spell-checker-config.schema.json'));
+    await genSchema(configWeb, p('spell-checker-config-web.schema.json'));
+}
+
+run();

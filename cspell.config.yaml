@@ -12,6 +12,7 @@ ignorePaths:
   - '*.log'
   - '*.vsix'
   - '*.tsv'
+  - '*.schema.json'
   - '*.svg'
   - '**/__snapshots__/**'
   - '**/server.js'
@@ -24,6 +25,7 @@ ignorePaths:
   - .cspell*.{json,yaml}
   - dist
   - fixtures/workspaces/**
+  - graphify-out
   - languageCodes.ts
   - package-lock.json
   - fixtures/_server/sampleSourceFiles/**
@@ -32,7 +34,6 @@ ignorePaths:
   - packages/client/samples/**
   - packages/client/server/**
   - packages/webview-ui/public/assets/**
-  - spell-checker-config.schema.json
   - testFixtures
 ignoreWords: []
 dictionaryDefinitions:
@@ -52,10 +53,10 @@ languageSettings:
     allowCompoundWords: false
 overrides:
   - filename: package.json
-    ignoreWords:
-      - colour
-      - canot
-      - incase
+    ignoreRegExpList:
+      - '/"description":\s+".*"/g'
+      - '/"markdownDescription":\s+".*"/g'
+
   - filename: '**/*.test.*'
     dictionaries:
       - lorem-ipsum
@@ -63,3 +64,4 @@ useGitignore: true
 words:
   - dbaeumer
   - esbenp
+  - graphify

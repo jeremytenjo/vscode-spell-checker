@@ -5,7 +5,7 @@
   "icon": "images/SpellCheck.png",
   "author": "Jason Dent",
   "license": "GPL-3.0-or-later",
-  "version": "4.8.0",
+  "version": "4.9.3",
   "publisher": "streetsidesoftware",
   "private": true,
   "type": "module",
@@ -66,101 +66,101 @@
       "editor/context": [
         {
           "command": "cSpell.suggestSpellingCorrections",
-          "when": "!editorReadonly && editorTextFocus && config.cSpell.showSuggestionsLinkInEditorContextMenu && cSpell.editorMenuContext.showSuggestions && cSpell.context.showDecorations",
+          "when": "!editorReadonly && editorTextFocus && config.cSpell.showSuggestionsLinkInEditorContextMenu && cSpell.editorMenuContext.showSuggestions && cSpell.context.showDecorations && config.cSpell.menuItemsOnEditorContextMenu.suggestSpellingCorrections",
           "group": "A_cspell@000"
         },
         {
           "submenu": "cSpell.spelling",
           "group": "A_cspell@001",
-          "when": "!editorReadonly && editorTextFocus && config.cSpell.showCommandsInEditorContextMenu"
+          "when": "!editorReadonly && editorTextFocus && config.cSpell.showCommandsInEditorContextMenu && config.cSpell.menuItemsOnEditorContextMenu.spellingContextMenu"
         },
         {
           "command": "cSpell.show",
-          "when": "editorTextFocus && config.cSpell.showCommandsInEditorContextMenu && cSpell.editorMenuContext.hasIssues && !cSpell.context.showDecorations",
+          "when": "editorTextFocus && config.cSpell.showCommandsInEditorContextMenu && cSpell.editorMenuContext.hasIssues && !cSpell.context.showDecorations && config.cSpell.menuItemsOnEditorContextMenu.showIssues",
           "group": "A_cspell@002"
         },
         {
           "command": "cSpell.hide",
-          "when": "editorTextFocus && config.cSpell.showCommandsInEditorContextMenu && cSpell.editorMenuContext.hasIssues && cSpell.context.showDecorations",
+          "when": "editorTextFocus && config.cSpell.showCommandsInEditorContextMenu && cSpell.editorMenuContext.hasIssues && cSpell.context.showDecorations && config.cSpell.menuItemsOnEditorContextMenu.hideIssues",
           "group": "A_cspell@002"
         }
       ],
       "cSpell.spelling": [
         {
           "command": "cSpell.suggestSpellingCorrections",
-          "when": "editorTextFocus && !config.cSpell.showSuggestionsLinkInEditorContextMenu && cSpell.editorMenuContext.showSuggestions",
+          "when": "editorTextFocus && !config.cSpell.showSuggestionsLinkInEditorContextMenu && cSpell.editorMenuContext.showSuggestions && config.cSpell.menuItemsOnSpellingContextMenu.suggestSpellingCorrections",
           "group": "A_cspell@001"
         },
         {
           "command": "cSpell.addWordToDictionary",
-          "when": "editorTextFocus && cSpell.editorMenuContext.addWordToDictionary",
+          "when": "editorTextFocus && cSpell.editorMenuContext.addWordToDictionary && config.cSpell.menuItemsOnSpellingContextMenu.addWordToDictionary",
           "group": "A_cspell@010"
         },
         {
           "command": "cSpell.addWordToFolderDictionary",
-          "when": "editorTextFocus && cSpell.editorMenuContext.addWordToFolderDictionary",
+          "when": "editorTextFocus && cSpell.editorMenuContext.addWordToFolderDictionary && config.cSpell.menuItemsOnSpellingContextMenu.addWordToFolderDictionary",
           "group": "A_cspell@020"
         },
         {
           "command": "cSpell.addWordToWorkspaceDictionary",
-          "when": "editorTextFocus && cSpell.editorMenuContext.addWordToWorkspaceDictionary",
+          "when": "editorTextFocus && cSpell.editorMenuContext.addWordToWorkspaceDictionary && config.cSpell.menuItemsOnSpellingContextMenu.addWordToWorkspaceDictionary",
           "group": "A_cspell@030"
         },
         {
           "command": "cSpell.addWordToCSpellConfig",
-          "when": "editorTextFocus && cSpell.editorMenuContext.addWordToCSpellConfig",
+          "when": "editorTextFocus && cSpell.editorMenuContext.addWordToCSpellConfig && config.cSpell.menuItemsOnSpellingContextMenu.addWordToCSpellConfig",
           "group": "A_cspell@050"
         },
         {
           "command": "cSpell.addWordToFolderSettings",
-          "when": "editorTextFocus && cSpell.editorMenuContext.addWordToFolderSettings",
+          "when": "editorTextFocus && cSpell.editorMenuContext.addWordToFolderSettings && config.cSpell.menuItemsOnSpellingContextMenu.addWordToFolderSettings",
           "group": "A_cspell@051"
         },
         {
           "command": "cSpell.addWordToWorkspaceSettings",
-          "when": "editorTextFocus && cSpell.editorMenuContext.addWordToWorkspaceSettings",
+          "when": "editorTextFocus && cSpell.editorMenuContext.addWordToWorkspaceSettings && config.cSpell.menuItemsOnSpellingContextMenu.addWordToWorkspaceSettings",
           "group": "A_cspell@052"
         },
         {
           "command": "cSpell.addWordToUserDictionary",
-          "when": "editorTextFocus && cSpell.editorMenuContext.addWordToUserDictionary",
+          "when": "editorTextFocus && cSpell.editorMenuContext.addWordToUserDictionary && config.cSpell.menuItemsOnSpellingContextMenu.addWordToUserDictionary",
           "group": "A_cspell@055"
         },
         {
           "command": "cSpell.addWordToUserSettings",
-          "when": "editorTextFocus && cSpell.editorMenuContext.addWordToUserSettings",
+          "when": "editorTextFocus && cSpell.editorMenuContext.addWordToUserSettings && config.cSpell.menuItemsOnSpellingContextMenu.addWordToUserSettings",
           "group": "A_cspell@056"
         },
         {
           "command": "cSpell.addIssuesToDictionary",
-          "when": "editorTextFocus && cSpell.editorMenuContext.addIssuesToDictionary",
+          "when": "editorTextFocus && cSpell.editorMenuContext.addIssuesToDictionary && config.cSpell.menuItemsOnSpellingContextMenu.addIssuesToDictionary",
           "group": "A_cspell@060"
         },
         {
           "command": "cSpell.addIgnoreWord",
-          "when": "editorTextFocus && cSpell.editorMenuContext.addIgnoreWord",
+          "when": "editorTextFocus && cSpell.editorMenuContext.addIgnoreWord && config.cSpell.menuItemsOnSpellingContextMenu.addIgnoreWord",
           "group": "A_cspell@090"
         },
         {
           "command": "cSpell.createCSpellConfig",
-          "when": "editorTextFocus && cSpell.editorMenuContext.createCSpellConfig",
+          "when": "editorTextFocus && cSpell.editorMenuContext.createCSpellConfig && config.cSpell.menuItemsOnSpellingContextMenu.createCSpellConfig",
           "group": "B_cspell@010"
         },
         {
           "command": "cSpell.createCustomDictionary",
-          "when": "editorTextFocus && cSpell.editorMenuContext.createCustomDictionary",
+          "when": "editorTextFocus && cSpell.editorMenuContext.createCustomDictionary && config.cSpell.menuItemsOnSpellingContextMenu.createCustomDictionary",
           "group": "B_cspell@020"
         }
       ],
       "cSpell.configMenu": [
         {
           "command": "cSpell.createCSpellConfig",
-          "when": "editorTextFocus && cSpell.editorMenuContext.createCSpellConfig",
+          "when": "editorTextFocus && cSpell.editorMenuContext.createCSpellConfig && cSpell.menuItemsOnCSpellConfigMenu.createCSpellConfig",
           "group": "A_cspell@010"
         },
         {
           "command": "cSpell.createCustomDictionary",
-          "when": "editorTextFocus && cSpell.editorMenuContext.createCustomDictionary",
+          "when": "editorTextFocus && cSpell.editorMenuContext.createCustomDictionary && cSpell.menuItemsOnCSpellConfigMenu.createCustomDictionary",
           "group": "A_cspell@070"
         }
       ],
@@ -296,32 +296,32 @@
       {
         "command": "cSpell.addWordToWorkspaceDictionary",
         "category": "Spell",
-        "title": "Add Words to Workspace Dictionary"
+        "title": "Add Word to Workspace Dictionary"
       },
       {
         "command": "cSpell.addWordToFolderDictionary",
         "category": "Spell",
-        "title": "Add Words to Folder Dictionary"
+        "title": "Add Word to Folder Dictionary"
       },
       {
         "command": "cSpell.addWordToUserDictionary",
         "category": "Spell",
-        "title": "Add Words to User Dictionary"
+        "title": "Add Word to User Dictionary"
       },
       {
         "command": "cSpell.addWordToWorkspaceSettings",
         "category": "Spell",
-        "title": "Add Words to Workspace Settings"
+        "title": "Add Word to Workspace Settings"
       },
       {
         "command": "cSpell.addWordToFolderSettings",
         "category": "Spell",
-        "title": "Add Words to Folder Settings"
+        "title": "Add Word to Folder Settings"
       },
       {
         "command": "cSpell.addWordToUserSettings",
         "category": "Spell",
-        "title": "Add Words to User Settings"
+        "title": "Add Word to User Settings"
       },
       {
         "command": "cSpell.enableForWorkspace",
@@ -347,13 +347,13 @@
         "command": "cSpell.enableCurrentLanguage",
         "category": "Spell",
         "title": "Enable Spell Checking Document Type",
-        "when": "cSpell.showLegacyCommands.enableCurrentLanguage"
+        "enablement": "cSpell.showLegacyCommands.enableCurrentLanguage"
       },
       {
         "command": "cSpell.disableCurrentLanguage",
         "category": "Spell",
         "title": "Disable Spell Checking Document Type",
-        "when": "cSpell.showLegacyCommands.disableCurrentLanguage"
+        "enablement": "cSpell.showLegacyCommands.disableCurrentLanguage"
       },
       {
         "command": "cSpell.enableCurrentFileType",
@@ -395,17 +395,17 @@
       {
         "command": "cSpell.removeWordFromFolderDictionary",
         "category": "Spell",
-        "title": "Remove Words from the Folder Dictionary"
+        "title": "Remove Word from the Folder Dictionary"
       },
       {
         "command": "cSpell.removeWordFromWorkspaceDictionary",
         "category": "Spell",
-        "title": "Remove Words from the Workspace Dictionaries"
+        "title": "Remove Word from the Workspace Dictionaries"
       },
       {
         "command": "cSpell.removeWordFromUserDictionary",
         "category": "Spell",
-        "title": "Remove Words from the Global Dictionary"
+        "title": "Remove Word from the Global Dictionary"
       },
       {
         "command": "cSpell.logPerfTimeline",
@@ -415,7 +415,7 @@
       {
         "command": "cSpell.addIgnoreWord",
         "category": "Spell",
-        "title": "Ignore Words"
+        "title": "Ignore Word"
       },
       {
         "command": "cSpell.addIgnoreWordsToFolder",
@@ -425,23 +425,23 @@
       {
         "command": "cSpell.addIgnoreWordsToWorkspace",
         "category": "Spell",
-        "title": "Ignore Words in Workspace Settings"
+        "title": "Ignore Word in Workspace Settings"
       },
       {
         "command": "cSpell.addIgnoreWordsToUser",
         "category": "Spell",
-        "title": "Ignore Words in User Settings"
+        "title": "Ignore Word in User Settings"
       },
       {
         "command": "cSpell.addWordToDictionary",
         "category": "Spell",
-        "title": "Add Words to Dictionary",
+        "title": "Add Word to Dictionary",
         "icon": "$(book)"
       },
       {
         "command": "cSpell.addWordToCSpellConfig",
         "category": "Spell",
-        "title": "Add Words to CSpell Configuration"
+        "title": "Add Word to CSpell Configuration"
       },
       {
         "command": "cSpell.addIssuesToDictionary",
@@ -451,12 +451,12 @@
       {
         "command": "cSpell.createCustomDictionary",
         "category": "Spell",
-        "title": "Create a Custom Dictionary File."
+        "title": "Create a Custom Dictionary File"
       },
       {
         "command": "cSpell.createCSpellConfig",
         "category": "Spell",
-        "title": "Create a CSpell Configuration File."
+        "title": "Create a CSpell Configuration File"
       },
       {
         "command": "cSpell.suggestSpellingCorrections",
@@ -486,7 +486,7 @@
       },
       {
         "command": "cSpellRegExpTester.testRegExp",
-        "title": "Test a Regular Expression on the current document.",
+        "title": "Test a Regular Expression on the current document",
         "enablement": "config.cSpell.experimental.enableRegexpView"
       },
       {
@@ -497,13 +497,13 @@
       },
       {
         "command": "cSpell.experimental.executeDocumentSymbolProvider",
-        "title": "Execute Document Symbol Provider on the current document.",
+        "title": "Execute Document Symbol Provider on the current document",
         "icon": "$(code)",
         "enablement": "config.cSpell.experimental.symbols"
       },
       {
         "command": "cSpell.autoFixSpellingIssues",
-        "title": "Fix all issues with a preferred suggestion in the current document.",
+        "title": "Fix all issues with a preferred suggestion in the current document",
         "icon": "$(lightbulb-autofix)"
       },
       {
@@ -514,7 +514,7 @@
       },
       {
         "command": "cSpell.issueViewer.item.autoFixSpellingIssues",
-        "title": "Fix issue with preferred suggestion in the current document.",
+        "title": "Fix issue with preferred suggestion in the current document",
         "icon": "$(lightbulb-autofix)",
         "enablement": "view == cSpellIssuesViewByIssue"
       },
@@ -527,7 +527,7 @@
       },
       {
         "command": "cSpell.issuesViewByFile.item.autoFixSpellingIssues",
-        "title": "Fix issue with preferred suggestion in the current document.",
+        "title": "Fix issue with preferred suggestion in the current document",
         "icon": "$(lightbulb-autofix)",
         "enablement": "view == cSpellIssuesViewByFile"
       },
@@ -574,7 +574,6 @@
         "category": "Spell",
         "title": "Show Spelling Issues",
         "shortTitle": "Show",
-        "when": "!cSpell.context.showDecorations",
         "icon": "$(eye)"
       },
       {
@@ -582,7 +581,6 @@
         "category": "Spell",
         "title": "Hide Spelling Issues",
         "shortTitle": "Hide",
-        "when": "cSpell.context.showDecorations",
         "icon": "$(eye-closed)"
       },
       {
@@ -733,21 +731,6 @@
     "configuration": [
       {
         "additionalProperties": false,
-        "markdownDescription": "Settings that control the behavior of the spell checker.",
-        "order": 0,
-        "properties": {
-          "cSpell.enabled": {
-            "default": true,
-            "markdownDescription": "Enable / Disable the spell checker.",
-            "scope": "resource",
-            "type": "boolean"
-          }
-        },
-        "title": "Code Spell Checker",
-        "type": "object"
-      },
-      {
-        "additionalProperties": false,
         "markdownDescription": "Advanced settings that are not commonly used.",
         "order": 18,
         "properties": {
@@ -805,6 +788,234 @@
           }
         },
         "title": "Advanced",
+        "type": "object"
+      },
+      {
+        "additionalProperties": false,
+        "markdownDescription": "Settings that control the appearance of the spell checker.",
+        "order": 6,
+        "properties": {
+          "cSpell.dark": {
+            "additionalProperties": false,
+            "markdownDescription": "Decoration for dark themes.\n\nSee:\n- `#cSpell.overviewRulerColor#`\n- `#cSpell.textDecoration#`",
+            "properties": {
+              "overviewRulerColor": {
+                "default": "#348feb80",
+                "markdownDescription": "The CSS color used to show issues in the ruler.\n\nDepends upon `#cSpell.useCustomDecorations#`.\nDisable the ruler by setting `#cSpell.showInRuler#` to `false`.\n\nSee:\n- [`<color>` CSS: Cascading Style Sheets, MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value)\n- [CSS Colors, W3C Schools](https://www.w3schools.com/cssref/css_colors.php)\n- Hex colors\n\nExamples:\n- `green`\n- `DarkYellow`\n- `#ffff0080` - semi-transparent yellow.\n- `rgb(255 153 0 / 80%)`",
+                "scope": "application",
+                "type": "string"
+              },
+              "textDecoration": {
+                "markdownDescription": "The CSS Style used to decorate spelling issues. Depends upon `#cSpell.useCustomDecorations#`.\n\nThis setting is used to manually configure the text decoration. If it is not set, the following settings are used:\n- `#cSpell.textDecorationLine#` to pick the line type\n- `#cSpell.textDecorationStyle#` to pick the style\n- `#cSpell.textDecorationColor#` to set the color\n- `#cSpell.textDecorationThickness#` to set the thickness.\n\nSee: [text-decoration - CSS: Cascading Style Sheets, MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration)\n\nFormat:  `<line> [style] <color> [thickness]`\n\n- line - `underline`, `overline`, see: [text-decoration-line, MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-line)\n- style - `solid`, `wavy`, `dotted`, see: [text-decoration-style, MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-style)\n- color - see: [text-decoration-color, MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-color)\n- thickness - see: [text-decoration-thickness, MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-thickness)\n\nExamples:\n- `underline green`\n- `underline dotted yellow 0.2rem`\n- `underline wavy #ff0c 1.5px` - Wavy underline with 1.5px thickness in semi-transparent yellow.\n\nTo change the ruler color, use `#cSpell.overviewRulerColor#`.",
+                "scope": "application",
+                "type": "string"
+              },
+              "textDecorationColor": {
+                "default": "#348feb",
+                "markdownDescription": "The decoration color for normal spelling issues.\n\nSee: [text-decoration - CSS: Cascading Style Sheets, MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration)\n- color - see: [text-decoration-color, MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-color)\n\nTo change the ruler color, use `#cSpell.overviewRulerColor#`.\n\nExamples:\n- `green`\n- `yellow`\n- `#ff0c`",
+                "scope": "application",
+                "type": "string"
+              },
+              "textDecorationColorFlagged": {
+                "default": "#f44",
+                "markdownDescription": "The decoration color for flagged issues.\n\nSee: [text-decoration - CSS: Cascading Style Sheets, MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration)\n- color - see: [text-decoration-color, MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-color)\n\nExamples:\n- `green`\n- `yellow`\n- `#ff0c`",
+                "scope": "application",
+                "type": "string"
+              },
+              "textDecorationColorSuggestion": {
+                "default": "#cf88",
+                "markdownDescription": "The decoration color for spelling suggestions.\n\nSee: [text-decoration - CSS: Cascading Style Sheets, MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration)\n- color - see: [text-decoration-color, MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-color)\n\nCommon Format: `#RGBA` or `#RRGGBBAA` or `#RGB` or `#RRGGBB`\n\nExamples:\n- `green`\n- `yellow`\n- `#ff0c`",
+                "scope": "application",
+                "type": "string"
+              },
+              "textDecorationLine": {
+                "default": "underline",
+                "enum": [
+                  "underline",
+                  "overline",
+                  "line-through"
+                ],
+                "markdownDescription": "The CSS line type used to decorate issues.\n\nSee: [text-decoration - CSS: Cascading Style Sheets, MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration)\n- line - `underline`, `overline`, see: [text-decoration-line, MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-line)",
+                "scope": "application",
+                "type": "string"
+              },
+              "textDecorationStyle": {
+                "default": "dashed",
+                "enum": [
+                  "solid",
+                  "wavy",
+                  "dotted",
+                  "dashed",
+                  "double"
+                ],
+                "markdownDescription": "The CSS line style used to decorate issues.\n\nSee: [text-decoration - CSS: Cascading Style Sheets, MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration)\n- style - `solid`, `wavy`, `dotted`, see: [text-decoration-style, MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-style)",
+                "scope": "application",
+                "type": "string"
+              },
+              "textDecorationThickness": {
+                "default": "auto",
+                "markdownDescription": "The CSS line thickness used to decorate issues.\n\nSee: [text-decoration - CSS: Cascading Style Sheets, MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration)\n- thickness - see: [text-decoration-thickness, MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-thickness)\n\nExamples:\n- `auto`\n- `from-font`\n- `0.2rem`\n- `1.5px`\n- `10%`",
+                "scope": "application",
+                "type": "string"
+              }
+            },
+            "scope": "application",
+            "type": "object"
+          },
+          "cSpell.doNotUseCustomDecorationForScheme": {
+            "additionalProperties": {
+              "type": "boolean"
+            },
+            "default": {
+              "chatSessionInput": true,
+              "comment": true,
+              "vscode-scm": true
+            },
+            "markdownDescription": "Use the VS Code Diagnostic Collection to render spelling issues.\n\nWith some edit boxes, like the source control message box, the custom decorations do not show up.\nThis setting allows the use of the VS Code Diagnostic Collection to render spelling issues.",
+            "scope": "application",
+            "title": "Use VS Code to Render Spelling Issues",
+            "type": "object"
+          },
+          "cSpell.light": {
+            "additionalProperties": false,
+            "markdownDescription": "Decoration for light themes.\n\nSee:\n- `#cSpell.overviewRulerColor#`\n- `#cSpell.textDecoration#`",
+            "properties": {
+              "overviewRulerColor": {
+                "default": "#348feb80",
+                "markdownDescription": "The CSS color used to show issues in the ruler.\n\nDepends upon `#cSpell.useCustomDecorations#`.\nDisable the ruler by setting `#cSpell.showInRuler#` to `false`.\n\nSee:\n- [`<color>` CSS: Cascading Style Sheets, MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value)\n- [CSS Colors, W3C Schools](https://www.w3schools.com/cssref/css_colors.php)\n- Hex colors\n\nExamples:\n- `green`\n- `DarkYellow`\n- `#ffff0080` - semi-transparent yellow.\n- `rgb(255 153 0 / 80%)`",
+                "scope": "application",
+                "type": "string"
+              },
+              "textDecoration": {
+                "markdownDescription": "The CSS Style used to decorate spelling issues. Depends upon `#cSpell.useCustomDecorations#`.\n\nThis setting is used to manually configure the text decoration. If it is not set, the following settings are used:\n- `#cSpell.textDecorationLine#` to pick the line type\n- `#cSpell.textDecorationStyle#` to pick the style\n- `#cSpell.textDecorationColor#` to set the color\n- `#cSpell.textDecorationThickness#` to set the thickness.\n\nSee: [text-decoration - CSS: Cascading Style Sheets, MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration)\n\nFormat:  `<line> [style] <color> [thickness]`\n\n- line - `underline`, `overline`, see: [text-decoration-line, MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-line)\n- style - `solid`, `wavy`, `dotted`, see: [text-decoration-style, MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-style)\n- color - see: [text-decoration-color, MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-color)\n- thickness - see: [text-decoration-thickness, MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-thickness)\n\nExamples:\n- `underline green`\n- `underline dotted yellow 0.2rem`\n- `underline wavy #ff0c 1.5px` - Wavy underline with 1.5px thickness in semi-transparent yellow.\n\nTo change the ruler color, use `#cSpell.overviewRulerColor#`.",
+                "scope": "application",
+                "type": "string"
+              },
+              "textDecorationColor": {
+                "default": "#348feb",
+                "markdownDescription": "The decoration color for normal spelling issues.\n\nSee: [text-decoration - CSS: Cascading Style Sheets, MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration)\n- color - see: [text-decoration-color, MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-color)\n\nTo change the ruler color, use `#cSpell.overviewRulerColor#`.\n\nExamples:\n- `green`\n- `yellow`\n- `#ff0c`",
+                "scope": "application",
+                "type": "string"
+              },
+              "textDecorationColorFlagged": {
+                "default": "#f44",
+                "markdownDescription": "The decoration color for flagged issues.\n\nSee: [text-decoration - CSS: Cascading Style Sheets, MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration)\n- color - see: [text-decoration-color, MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-color)\n\nExamples:\n- `green`\n- `yellow`\n- `#ff0c`",
+                "scope": "application",
+                "type": "string"
+              },
+              "textDecorationColorSuggestion": {
+                "default": "#cf88",
+                "markdownDescription": "The decoration color for spelling suggestions.\n\nSee: [text-decoration - CSS: Cascading Style Sheets, MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration)\n- color - see: [text-decoration-color, MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-color)\n\nCommon Format: `#RGBA` or `#RRGGBBAA` or `#RGB` or `#RRGGBB`\n\nExamples:\n- `green`\n- `yellow`\n- `#ff0c`",
+                "scope": "application",
+                "type": "string"
+              },
+              "textDecorationLine": {
+                "default": "underline",
+                "enum": [
+                  "underline",
+                  "overline",
+                  "line-through"
+                ],
+                "markdownDescription": "The CSS line type used to decorate issues.\n\nSee: [text-decoration - CSS: Cascading Style Sheets, MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration)\n- line - `underline`, `overline`, see: [text-decoration-line, MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-line)",
+                "scope": "application",
+                "type": "string"
+              },
+              "textDecorationStyle": {
+                "default": "dashed",
+                "enum": [
+                  "solid",
+                  "wavy",
+                  "dotted",
+                  "dashed",
+                  "double"
+                ],
+                "markdownDescription": "The CSS line style used to decorate issues.\n\nSee: [text-decoration - CSS: Cascading Style Sheets, MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration)\n- style - `solid`, `wavy`, `dotted`, see: [text-decoration-style, MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-style)",
+                "scope": "application",
+                "type": "string"
+              },
+              "textDecorationThickness": {
+                "default": "auto",
+                "markdownDescription": "The CSS line thickness used to decorate issues.\n\nSee: [text-decoration - CSS: Cascading Style Sheets, MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration)\n- thickness - see: [text-decoration-thickness, MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-thickness)\n\nExamples:\n- `auto`\n- `from-font`\n- `0.2rem`\n- `1.5px`\n- `10%`",
+                "scope": "application",
+                "type": "string"
+              }
+            },
+            "scope": "application",
+            "type": "object"
+          },
+          "cSpell.overviewRulerColor": {
+            "default": "#348feb80",
+            "markdownDescription": "The CSS color used to show issues in the ruler.\n\nDepends upon `#cSpell.useCustomDecorations#`.\nDisable the ruler by setting `#cSpell.showInRuler#` to `false`.\n\nSee:\n- [`<color>` CSS: Cascading Style Sheets, MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value)\n- [CSS Colors, W3C Schools](https://www.w3schools.com/cssref/css_colors.php)\n- Hex colors\n\nExamples:\n- `green`\n- `DarkYellow`\n- `#ffff0080` - semi-transparent yellow.\n- `rgb(255 153 0 / 80%)`",
+            "scope": "application",
+            "type": "string"
+          },
+          "cSpell.showInRuler": {
+            "default": true,
+            "markdownDescription": "Show spelling issues in the editor ruler.\n\nNote: This setting is only used when `#cSpell.useCustomDecorations#` is `true`.\n\nNote: To set the color of the ruler, use `#cSpell.overviewRulerColor#`.",
+            "scope": "application",
+            "type": "boolean"
+          },
+          "cSpell.textDecoration": {
+            "markdownDescription": "The CSS Style used to decorate spelling issues. Depends upon `#cSpell.useCustomDecorations#`.\n\nThis setting is used to manually configure the text decoration. If it is not set, the following settings are used:\n- `#cSpell.textDecorationLine#` to pick the line type\n- `#cSpell.textDecorationStyle#` to pick the style\n- `#cSpell.textDecorationColor#` to set the color\n- `#cSpell.textDecorationThickness#` to set the thickness.\n\nSee: [text-decoration - CSS: Cascading Style Sheets, MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration)\n\nFormat:  `<line> [style] <color> [thickness]`\n\n- line - `underline`, `overline`, see: [text-decoration-line, MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-line)\n- style - `solid`, `wavy`, `dotted`, see: [text-decoration-style, MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-style)\n- color - see: [text-decoration-color, MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-color)\n- thickness - see: [text-decoration-thickness, MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-thickness)\n\nExamples:\n- `underline green`\n- `underline dotted yellow 0.2rem`\n- `underline wavy #ff0c 1.5px` - Wavy underline with 1.5px thickness in semi-transparent yellow.\n\nTo change the ruler color, use `#cSpell.overviewRulerColor#`.",
+            "scope": "application",
+            "type": "string"
+          },
+          "cSpell.textDecorationColor": {
+            "default": "#348feb",
+            "markdownDescription": "The decoration color for normal spelling issues.\n\nSee: [text-decoration - CSS: Cascading Style Sheets, MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration)\n- color - see: [text-decoration-color, MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-color)\n\nTo change the ruler color, use `#cSpell.overviewRulerColor#`.\n\nExamples:\n- `green`\n- `yellow`\n- `#ff0c`",
+            "scope": "application",
+            "type": "string"
+          },
+          "cSpell.textDecorationColorFlagged": {
+            "default": "#f44",
+            "markdownDescription": "The decoration color for flagged issues.\n\nSee: [text-decoration - CSS: Cascading Style Sheets, MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration)\n- color - see: [text-decoration-color, MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-color)\n\nExamples:\n- `green`\n- `yellow`\n- `#ff0c`",
+            "scope": "application",
+            "type": "string"
+          },
+          "cSpell.textDecorationColorSuggestion": {
+            "default": "#cf88",
+            "markdownDescription": "The decoration color for spelling suggestions.\n\nSee: [text-decoration - CSS: Cascading Style Sheets, MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration)\n- color - see: [text-decoration-color, MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-color)\n\nCommon Format: `#RGBA` or `#RRGGBBAA` or `#RGB` or `#RRGGBB`\n\nExamples:\n- `green`\n- `yellow`\n- `#ff0c`",
+            "scope": "application",
+            "type": "string"
+          },
+          "cSpell.textDecorationLine": {
+            "default": "underline",
+            "enum": [
+              "underline",
+              "overline",
+              "line-through"
+            ],
+            "markdownDescription": "The CSS line type used to decorate issues.\n\nSee: [text-decoration - CSS: Cascading Style Sheets, MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration)\n- line - `underline`, `overline`, see: [text-decoration-line, MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-line)",
+            "scope": "application",
+            "type": "string"
+          },
+          "cSpell.textDecorationStyle": {
+            "default": "dashed",
+            "enum": [
+              "solid",
+              "wavy",
+              "dotted",
+              "dashed",
+              "double"
+            ],
+            "markdownDescription": "The CSS line style used to decorate issues.\n\nSee: [text-decoration - CSS: Cascading Style Sheets, MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration)\n- style - `solid`, `wavy`, `dotted`, see: [text-decoration-style, MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-style)",
+            "scope": "application",
+            "type": "string"
+          },
+          "cSpell.textDecorationThickness": {
+            "default": "auto",
+            "markdownDescription": "The CSS line thickness used to decorate issues.\n\nSee: [text-decoration - CSS: Cascading Style Sheets, MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration)\n- thickness - see: [text-decoration-thickness, MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-thickness)\n\nExamples:\n- `auto`\n- `from-font`\n- `0.2rem`\n- `1.5px`\n- `10%`",
+            "scope": "application",
+            "type": "string"
+          },
+          "cSpell.useCustomDecorations": {
+            "default": false,
+            "markdownDescription": "Draw custom decorations on Spelling Issues.\n- `true` - Use custom decorations. - VS Code Diagnostic Severity Levels are not used.\n- `false` - Use the VS Code Diagnostic Collection to render spelling issues.\n\nNote: This setting overrides the VS Code Diagnostics setting: `#cSpell.diagnosticLevel#`.",
+            "scope": "application",
+            "type": "boolean"
+          }
+        },
+        "title": "Appearance",
         "type": "object"
       },
       {
@@ -970,6 +1181,16 @@
                             "markdownDescription": "Some dictionaries may contain forbidden words to prevent compounding from generating\nwords that are not valid in the language. These are often\nwords that are used in other languages or might be generated through compounding.\nThis setting allows flagged words to be ignored when checking the dictionary.\nThe effect is similar to the word not being in the dictionary.",
                             "type": "boolean"
                           },
+                          "kind": {
+                            "enum": [
+                              "words",
+                              "flag-words",
+                              "ignore-words",
+                              "suggest-words"
+                            ],
+                            "markdownDescription": "Used to specify the type of dictionary being referenced.\nValues:\n- `words` - (default) A dictionary containing words.\n- `flag-words` - A dictionary containing flag words. Words found in the dictionary will be treated like `flagWords`.\n- `ignore-words` - A dictionary containing words to ignore.\n   This is the same as setting `noSuggest` to `true`.\n- `suggest-words` - A dictionary containing suggested word corrections. Words found in the\n   dictionary will be treated like `suggestWords`.",
+                            "type": "string"
+                          },
                           "name": {
                             "markdownDescription": "The reference name of the dictionary.\n\n\nExample: `My Words` or `custom`\n\n\nIf the name matches a pre-defined dictionary, it will override the pre-defined dictionary.\nIf you use: `typescript` it will replace the built-in TypeScript dictionary.",
                             "pattern": "^(?=[^!*,;{}[\\]~\\n]+$)(?=(.*\\w)).+$",
@@ -1038,6 +1259,16 @@
                             "markdownDescription": "Some dictionaries may contain forbidden words to prevent compounding from generating\nwords that are not valid in the language. These are often\nwords that are used in other languages or might be generated through compounding.\nThis setting allows flagged words to be ignored when checking the dictionary.\nThe effect is similar to the word not being in the dictionary.",
                             "type": "boolean"
                           },
+                          "kind": {
+                            "enum": [
+                              "words",
+                              "flag-words",
+                              "ignore-words",
+                              "suggest-words"
+                            ],
+                            "markdownDescription": "Used to specify the type of dictionary being referenced.\nValues:\n- `words` - (default) A dictionary containing words.\n- `flag-words` - A dictionary containing flag words. Words found in the dictionary will be treated like `flagWords`.\n- `ignore-words` - A dictionary containing words to ignore.\n   This is the same as setting `noSuggest` to `true`.\n- `suggest-words` - A dictionary containing suggested word corrections. Words found in the\n   dictionary will be treated like `suggestWords`.",
+                            "type": "string"
+                          },
                           "name": {
                             "markdownDescription": "This is the name of a dictionary.\n\nName Format:\n- Must contain at least 1 number or letter.\n- Spaces are allowed.\n- Leading and trailing space will be removed.\n- Names ARE case-sensitive.\n- Must not contain `*`, `!`, `;`, `,`, `{`, `}`, `[`, `]`, `~`.",
                             "type": "string"
@@ -1080,6 +1311,16 @@
                           "ignoreForbiddenWords": {
                             "markdownDescription": "Some dictionaries may contain forbidden words to prevent compounding from generating\nwords that are not valid in the language. These are often\nwords that are used in other languages or might be generated through compounding.\nThis setting allows flagged words to be ignored when checking the dictionary.\nThe effect is similar to the word not being in the dictionary.",
                             "type": "boolean"
+                          },
+                          "kind": {
+                            "enum": [
+                              "words",
+                              "flag-words",
+                              "ignore-words",
+                              "suggest-words"
+                            ],
+                            "markdownDescription": "Used to specify the type of dictionary being referenced.\nValues:\n- `words` - (default) A dictionary containing words.\n- `flag-words` - A dictionary containing flag words. Words found in the dictionary will be treated like `flagWords`.\n- `ignore-words` - A dictionary containing words to ignore.\n   This is the same as setting `noSuggest` to `true`.\n- `suggest-words` - A dictionary containing suggested word corrections. Words found in the\n   dictionary will be treated like `suggestWords`.",
+                            "type": "string"
                           },
                           "name": {
                             "markdownDescription": "This is the name of a dictionary.\n\nName Format:\n- Must contain at least 1 number or letter.\n- Spaces are allowed.\n- Leading and trailing space will be removed.\n- Names ARE case-sensitive.\n- Must not contain `*`, `!`, `;`, `,`, `{`, `}`, `[`, `]`, `~`.",
@@ -1145,7 +1386,7 @@
                     "pattern": "^(!?[-\\w_\\s]+)|(\\*)$",
                     "type": "string"
                   },
-                  "markdownDescription": "Enable / Disable checking file types (languageIds).\n\nThese are in additional to the file types specified by  {@link  Settings.enabledLanguageIds } .\nTo disable a language, prefix with `!` as in `!json`,\n\n\n**Example: individual file types**\n\n```\njsonc       // enable checking for jsonc\n!json       // disable checking for json\nkotlin      // enable checking for kotlin\n```\n\n**Example: enable all file types**\n\n```\n*           // enable checking for all file types\n!json       // except for json\n```",
+                  "markdownDescription": "Enable / Disable checking file types (languageIds).\n\nThese are in addition to the file types specified by  {@link  Settings.enabledLanguageIds } .\nTo disable a language, prefix with `!` as in `!json`.\n\n\n**Example: individual file types**\n\n```\njsonc       // enable checking for jsonc\n!json       // disable checking for json\nkotlin      // enable checking for kotlin\n```\n\n**Example: enable all file types**\n\n```\n*           // enable checking for all file types\n!json       // except for json\n```",
                   "scope": "resource",
                   "title": "Enable File Types",
                   "type": "array",
@@ -1178,18 +1419,18 @@
                 "filename": {
                   "anyOf": [
                     {
-                      "markdownDescription": "These are glob expressions.",
                       "type": "string"
                     },
                     {
                       "items": {
-                        "markdownDescription": "These are glob expressions.",
                         "type": "string"
                       },
                       "type": "array"
                     }
                   ],
-                  "markdownDescription": "Glob pattern or patterns to match against."
+                  "markdownDescription": "The filename glob pattern to which this override applies. This is how the override determines which files it affects.\n\nExample to set the language for all TypeScript files:\n```jsonc\n{\n  \"filename\": \"**/french/**\", // match all files in the french directory\n  \"language\": \"fr\" // Apply French language settings to all files in the french directory\n}\n```\nExample to set the file type for a specific set of files:\n```jsonc\n{\n  \"filename\": \"**/*.ts\",\n  \"languageId\": \"typescript\"\n}\n```",
+                  "note": "Selects Files",
+                  "order": 1
                 },
                 "flagWords": {
                   "items": {
@@ -1420,6 +1661,16 @@
                                   "markdownDescription": "Some dictionaries may contain forbidden words to prevent compounding from generating\nwords that are not valid in the language. These are often\nwords that are used in other languages or might be generated through compounding.\nThis setting allows flagged words to be ignored when checking the dictionary.\nThe effect is similar to the word not being in the dictionary.",
                                   "type": "boolean"
                                 },
+                                "kind": {
+                                  "enum": [
+                                    "words",
+                                    "flag-words",
+                                    "ignore-words",
+                                    "suggest-words"
+                                  ],
+                                  "markdownDescription": "Used to specify the type of dictionary being referenced.\nValues:\n- `words` - (default) A dictionary containing words.\n- `flag-words` - A dictionary containing flag words. Words found in the dictionary will be treated like `flagWords`.\n- `ignore-words` - A dictionary containing words to ignore.\n   This is the same as setting `noSuggest` to `true`.\n- `suggest-words` - A dictionary containing suggested word corrections. Words found in the\n   dictionary will be treated like `suggestWords`.",
+                                  "type": "string"
+                                },
                                 "name": {
                                   "markdownDescription": "The reference name of the dictionary.\n\n\nExample: `My Words` or `custom`\n\n\nIf the name matches a pre-defined dictionary, it will override the pre-defined dictionary.\nIf you use: `typescript` it will replace the built-in TypeScript dictionary.",
                                   "pattern": "^(?=[^!*,;{}[\\]~\\n]+$)(?=(.*\\w)).+$",
@@ -1488,6 +1739,16 @@
                                   "markdownDescription": "Some dictionaries may contain forbidden words to prevent compounding from generating\nwords that are not valid in the language. These are often\nwords that are used in other languages or might be generated through compounding.\nThis setting allows flagged words to be ignored when checking the dictionary.\nThe effect is similar to the word not being in the dictionary.",
                                   "type": "boolean"
                                 },
+                                "kind": {
+                                  "enum": [
+                                    "words",
+                                    "flag-words",
+                                    "ignore-words",
+                                    "suggest-words"
+                                  ],
+                                  "markdownDescription": "Used to specify the type of dictionary being referenced.\nValues:\n- `words` - (default) A dictionary containing words.\n- `flag-words` - A dictionary containing flag words. Words found in the dictionary will be treated like `flagWords`.\n- `ignore-words` - A dictionary containing words to ignore.\n   This is the same as setting `noSuggest` to `true`.\n- `suggest-words` - A dictionary containing suggested word corrections. Words found in the\n   dictionary will be treated like `suggestWords`.",
+                                  "type": "string"
+                                },
                                 "name": {
                                   "markdownDescription": "This is the name of a dictionary.\n\nName Format:\n- Must contain at least 1 number or letter.\n- Spaces are allowed.\n- Leading and trailing space will be removed.\n- Names ARE case-sensitive.\n- Must not contain `*`, `!`, `;`, `,`, `{`, `}`, `[`, `]`, `~`.",
                                   "type": "string"
@@ -1530,6 +1791,16 @@
                                 "ignoreForbiddenWords": {
                                   "markdownDescription": "Some dictionaries may contain forbidden words to prevent compounding from generating\nwords that are not valid in the language. These are often\nwords that are used in other languages or might be generated through compounding.\nThis setting allows flagged words to be ignored when checking the dictionary.\nThe effect is similar to the word not being in the dictionary.",
                                   "type": "boolean"
+                                },
+                                "kind": {
+                                  "enum": [
+                                    "words",
+                                    "flag-words",
+                                    "ignore-words",
+                                    "suggest-words"
+                                  ],
+                                  "markdownDescription": "Used to specify the type of dictionary being referenced.\nValues:\n- `words` - (default) A dictionary containing words.\n- `flag-words` - A dictionary containing flag words. Words found in the dictionary will be treated like `flagWords`.\n- `ignore-words` - A dictionary containing words to ignore.\n   This is the same as setting `noSuggest` to `true`.\n- `suggest-words` - A dictionary containing suggested word corrections. Words found in the\n   dictionary will be treated like `suggestWords`.",
+                                  "type": "string"
                                 },
                                 "name": {
                                   "markdownDescription": "This is the name of a dictionary.\n\nName Format:\n- Must contain at least 1 number or letter.\n- Spaces are allowed.\n- Leading and trailing space will be removed.\n- Names ARE case-sensitive.\n- Must not contain `*`, `!`, `;`, `,`, `{`, `}`, `[`, `]`, `~`.",
@@ -1750,7 +2021,9 @@
                             "type": "array"
                           }
                         ],
-                        "markdownDescription": "The language id.  Ex: `typescript`, `html`, or `php`.  `*` -- will match all languages."
+                        "markdownDescription": "The language id.  Ex: `typescript`, `html`, or `php`.  `*` -- will match all languages.",
+                        "note": "Matches against `languageId` (File Type)",
+                        "order": 1
                       },
                       "locale": {
                         "anyOf": [
@@ -1766,7 +2039,9 @@
                             "type": "array"
                           }
                         ],
-                        "markdownDescription": "The locale filter, matches against the language. This can be a comma separated list. `*` will match all locales."
+                        "markdownDescription": "The locale filter, matches against the language. This can be a comma separated list. `*` will match all locales.",
+                        "note": "Matches against `language`",
+                        "order": 2
                       },
                       "name": {
                         "markdownDescription": "Optional name of configuration.",
@@ -1826,6 +2101,45 @@
                         },
                         "markdownDescription": "Defines a list of patterns that can be used with the  {@link  ignoreRegExpList }  and\n {@link  includeRegExpList }  options.\n\nFor example:\n\n```javascript\n\"ignoreRegExpList\": [\"comments\"],\n\"patterns\": [\n  {\n    \"name\": \"comment-single-line\",\n    \"pattern\": \"/#.*/g\"\n  },\n  {\n    \"name\": \"comment-multi-line\",\n    \"pattern\": \"/(?:\\\\/\\\\*[\\\\s\\\\S]*?\\\\*\\\\/)/g\"\n  },\n  // You can also combine multiple named patterns into one single named pattern\n  {\n    \"name\": \"comments\",\n    \"pattern\": [\"comment-single-line\", \"comment-multi-line\"]\n  }\n]\n```",
                         "type": "array"
+                      },
+                      "softWordBreakDefinitions": {
+                        "additionalProperties": {
+                          "anyOf": [
+                            {
+                              "markdownDescription": "Represents a regular expression used for word break rules.\n\nThe matching string will be prefixed and suffixed with a soft-hyphen.\nIf the matching string is zero length, only a single soft-hyphen will be inserted.\nIt is best to use lookahead and lookbehind assertions to ensure correct word break positions.\n\nExamples:\n- `\"/(?<=\\\\bptr)/\"` -- The break would occur after the `ptr`, helping with pointer definitions starting with `ptr`, such as `ptrvalue`.\n- `\"/(?<=\\\\bI)(?=[A-Z])/\"` -- The break would occur before an uppercase letter following an `I` at a word boundary, helping with interface definitions like `IError`.",
+                              "type": "string"
+                            },
+                            {
+                              "markdownDescription": "Defines a word break rule based on a string.\n\nFormat:\n- `\"before|after\"` -- Matches a word break between `before` and `after`\n- `\"before|after$\"` -- Matches a word break between `before` and `after` at the end of a word\n- `\"^before|after\"` -- Matches a word break between `before` at the start of a word and `after`\n- `\"^before|after$\"` -- Matches a word break between `before` at the start of a word and `after` at the end of a word\n- `\"before|\"` -- Matches a word break after `before`\n- `\"^before|\"` -- Matches a word break after `before` at the start of a word\n- `\"|after\"` -- Matches a word break before `after`\n- `\"|after$\"` -- Matches a word break before `after` at the end of a word\n\n\nWhere `before` is the text before the word break and `after` is the text after the word break.\n\nSpecial characters like `|`, `^`, and `$` have specific meanings.\n- `|` -- Represents the position of the word break\n- `^` -- Indicates the start of a word\n- `$` -- Indicates the end of a word\n\nFor more complicated word break rules, consider using regular expressions with the  {@link  SoftWordBreakRegExp }  type.\n\nExamples:\n- `\"^ptr|\"` -- Would help with pointer definitions starting with `ptr`, such as `ptrvalue`.\n- `\"^I|\"` -- Would help with interface definitions starting with `I`, such as `IERROR`.",
+                              "type": "string"
+                            },
+                            {
+                              "items": {
+                                "anyOf": [
+                                  {
+                                    "markdownDescription": "Represents a regular expression used for word break rules.\n\nThe matching string will be prefixed and suffixed with a soft-hyphen.\nIf the matching string is zero length, only a single soft-hyphen will be inserted.\nIt is best to use lookahead and lookbehind assertions to ensure correct word break positions.\n\nExamples:\n- `\"/(?<=\\\\bptr)/\"` -- The break would occur after the `ptr`, helping with pointer definitions starting with `ptr`, such as `ptrvalue`.\n- `\"/(?<=\\\\bI)(?=[A-Z])/\"` -- The break would occur before an uppercase letter following an `I` at a word boundary, helping with interface definitions like `IError`.",
+                                    "type": "string"
+                                  },
+                                  {
+                                    "markdownDescription": "Defines a word break rule based on a string.\n\nFormat:\n- `\"before|after\"` -- Matches a word break between `before` and `after`\n- `\"before|after$\"` -- Matches a word break between `before` and `after` at the end of a word\n- `\"^before|after\"` -- Matches a word break between `before` at the start of a word and `after`\n- `\"^before|after$\"` -- Matches a word break between `before` at the start of a word and `after` at the end of a word\n- `\"before|\"` -- Matches a word break after `before`\n- `\"^before|\"` -- Matches a word break after `before` at the start of a word\n- `\"|after\"` -- Matches a word break before `after`\n- `\"|after$\"` -- Matches a word break before `after` at the end of a word\n\n\nWhere `before` is the text before the word break and `after` is the text after the word break.\n\nSpecial characters like `|`, `^`, and `$` have specific meanings.\n- `|` -- Represents the position of the word break\n- `^` -- Indicates the start of a word\n- `$` -- Indicates the end of a word\n\nFor more complicated word break rules, consider using regular expressions with the  {@link  SoftWordBreakRegExp }  type.\n\nExamples:\n- `\"^ptr|\"` -- Would help with pointer definitions starting with `ptr`, such as `ptrvalue`.\n- `\"^I|\"` -- Would help with interface definitions starting with `I`, such as `IERROR`.",
+                                    "type": "string"
+                                  }
+                                ]
+                              },
+                              "type": "array"
+                            }
+                          ],
+                          "markdownDescription": "A named set of soft word break rules."
+                        },
+                        "markdownDescription": "Defines a set of word break rules that can be used for text segmentation.\n\nSoft word breaks are done through injecting soft-hyphens at the appropriate positions in the text before spell checking.\n\nThis allows for word breaks that might not be captured by the camel case detection.\n\nNote: soft-hyphens are removed before checking the word against the dictionaries.\n\nFor example, if there is a soft-hyphen (represented by a `|`) injected between `error` and `code`\n`error|code`, the following words would be checked against\nthe dictionaries: `errorcode`, `error`, and `code`.",
+                        "type": "object"
+                      },
+                      "softWordBreaks": {
+                        "additionalProperties": {
+                          "type": "boolean"
+                        },
+                        "markdownDescription": "Allows enabling or disabling soft word break rules by name.",
+                        "type": "object"
                       },
                       "substitutionDefinitions": {
                         "items": {
@@ -1917,7 +2231,7 @@
                         "type": "string"
                       },
                       "useIntlWordSegmentation": {
-                        "markdownDescription": "Enables enables locale-sensitive text segmentation to support languages like Japanese, Chinese, Thai, Lao, Khmer, Myanmar, etc.\nThe locale used for the segmentation is based on the  {@link  language  }  setting.",
+                        "markdownDescription": "Enables locale-sensitive text segmentation to support languages like Japanese, Chinese, Thai, Lao, Khmer, Myanmar, etc.\nThe locale used for the segmentation is based on the  {@link  language  }  setting.",
                         "type": "boolean"
                       },
                       "words": {
@@ -2044,6 +2358,45 @@
                   "markdownDescription": "The PnP files to search for. Note: `.mjs` files are not currently supported.",
                   "type": "array"
                 },
+                "softWordBreakDefinitions": {
+                  "additionalProperties": {
+                    "anyOf": [
+                      {
+                        "markdownDescription": "Represents a regular expression used for word break rules.\n\nThe matching string will be prefixed and suffixed with a soft-hyphen.\nIf the matching string is zero length, only a single soft-hyphen will be inserted.\nIt is best to use lookahead and lookbehind assertions to ensure correct word break positions.\n\nExamples:\n- `\"/(?<=\\\\bptr)/\"` -- The break would occur after the `ptr`, helping with pointer definitions starting with `ptr`, such as `ptrvalue`.\n- `\"/(?<=\\\\bI)(?=[A-Z])/\"` -- The break would occur before an uppercase letter following an `I` at a word boundary, helping with interface definitions like `IError`.",
+                        "type": "string"
+                      },
+                      {
+                        "markdownDescription": "Defines a word break rule based on a string.\n\nFormat:\n- `\"before|after\"` -- Matches a word break between `before` and `after`\n- `\"before|after$\"` -- Matches a word break between `before` and `after` at the end of a word\n- `\"^before|after\"` -- Matches a word break between `before` at the start of a word and `after`\n- `\"^before|after$\"` -- Matches a word break between `before` at the start of a word and `after` at the end of a word\n- `\"before|\"` -- Matches a word break after `before`\n- `\"^before|\"` -- Matches a word break after `before` at the start of a word\n- `\"|after\"` -- Matches a word break before `after`\n- `\"|after$\"` -- Matches a word break before `after` at the end of a word\n\n\nWhere `before` is the text before the word break and `after` is the text after the word break.\n\nSpecial characters like `|`, `^`, and `$` have specific meanings.\n- `|` -- Represents the position of the word break\n- `^` -- Indicates the start of a word\n- `$` -- Indicates the end of a word\n\nFor more complicated word break rules, consider using regular expressions with the  {@link  SoftWordBreakRegExp }  type.\n\nExamples:\n- `\"^ptr|\"` -- Would help with pointer definitions starting with `ptr`, such as `ptrvalue`.\n- `\"^I|\"` -- Would help with interface definitions starting with `I`, such as `IERROR`.",
+                        "type": "string"
+                      },
+                      {
+                        "items": {
+                          "anyOf": [
+                            {
+                              "markdownDescription": "Represents a regular expression used for word break rules.\n\nThe matching string will be prefixed and suffixed with a soft-hyphen.\nIf the matching string is zero length, only a single soft-hyphen will be inserted.\nIt is best to use lookahead and lookbehind assertions to ensure correct word break positions.\n\nExamples:\n- `\"/(?<=\\\\bptr)/\"` -- The break would occur after the `ptr`, helping with pointer definitions starting with `ptr`, such as `ptrvalue`.\n- `\"/(?<=\\\\bI)(?=[A-Z])/\"` -- The break would occur before an uppercase letter following an `I` at a word boundary, helping with interface definitions like `IError`.",
+                              "type": "string"
+                            },
+                            {
+                              "markdownDescription": "Defines a word break rule based on a string.\n\nFormat:\n- `\"before|after\"` -- Matches a word break between `before` and `after`\n- `\"before|after$\"` -- Matches a word break between `before` and `after` at the end of a word\n- `\"^before|after\"` -- Matches a word break between `before` at the start of a word and `after`\n- `\"^before|after$\"` -- Matches a word break between `before` at the start of a word and `after` at the end of a word\n- `\"before|\"` -- Matches a word break after `before`\n- `\"^before|\"` -- Matches a word break after `before` at the start of a word\n- `\"|after\"` -- Matches a word break before `after`\n- `\"|after$\"` -- Matches a word break before `after` at the end of a word\n\n\nWhere `before` is the text before the word break and `after` is the text after the word break.\n\nSpecial characters like `|`, `^`, and `$` have specific meanings.\n- `|` -- Represents the position of the word break\n- `^` -- Indicates the start of a word\n- `$` -- Indicates the end of a word\n\nFor more complicated word break rules, consider using regular expressions with the  {@link  SoftWordBreakRegExp }  type.\n\nExamples:\n- `\"^ptr|\"` -- Would help with pointer definitions starting with `ptr`, such as `ptrvalue`.\n- `\"^I|\"` -- Would help with interface definitions starting with `I`, such as `IERROR`.",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "type": "array"
+                      }
+                    ],
+                    "markdownDescription": "A named set of soft word break rules."
+                  },
+                  "markdownDescription": "Defines a set of word break rules that can be used for text segmentation.\n\nSoft word breaks are done through injecting soft-hyphens at the appropriate positions in the text before spell checking.\n\nThis allows for word breaks that might not be captured by the camel case detection.\n\nNote: soft-hyphens are removed before checking the word against the dictionaries.\n\nFor example, if there is a soft-hyphen (represented by a `|`) injected between `error` and `code`\n`error|code`, the following words would be checked against\nthe dictionaries: `errorcode`, `error`, and `code`.",
+                  "type": "object"
+                },
+                "softWordBreaks": {
+                  "additionalProperties": {
+                    "type": "boolean"
+                  },
+                  "markdownDescription": "Allows enabling or disabling soft word break rules by name.",
+                  "type": "object"
+                },
                 "substitutionDefinitions": {
                   "items": {
                     "additionalProperties": false,
@@ -2144,7 +2497,7 @@
                   "type": "string"
                 },
                 "useIntlWordSegmentation": {
-                  "markdownDescription": "Enables enables locale-sensitive text segmentation to support languages like Japanese, Chinese, Thai, Lao, Khmer, Myanmar, etc.\nThe locale used for the segmentation is based on the  {@link  language  }  setting.",
+                  "markdownDescription": "Enables locale-sensitive text segmentation to support languages like Japanese, Chinese, Thai, Lao, Khmer, Myanmar, etc.\nThe locale used for the segmentation is based on the  {@link  language  }  setting.",
                   "type": "boolean"
                 },
                 "usePnP": {
@@ -2205,6 +2558,45 @@
             "markdownDescription": "Defines a list of patterns that can be used with the `#cSpell.ignoreRegExpList#` and\n`#cSpell.includeRegExpList#` options.\n\n**Example:**\n\n```jsonc\n\"cSpell.patterns\": [\n  {\n    \"name\": \"comment-single-line\",\n    \"pattern\": \"/#.*/g\"\n  },\n  {\n    \"name\": \"comment-multi-line\",\n    \"pattern\": \"/(?:\\\\/\\\\*[\\\\s\\\\S]*?\\\\*\\\\/)/g\"\n  }\n]\n```",
             "scope": "resource",
             "type": "array"
+          },
+          "cSpell.softWordBreakDefinitions": {
+            "additionalProperties": {
+              "anyOf": [
+                {
+                  "markdownDescription": "Represents a regular expression used for word break rules.\n\nThe matching string will be prefixed and suffixed with a soft-hyphen.\nIf the matching string is zero length, only a single soft-hyphen will be inserted.\nIt is best to use lookahead and lookbehind assertions to ensure correct word break positions.\n\nExamples:\n- `\"/(?<=\\\\bptr)/\"` -- The break would occur after the `ptr`, helping with pointer definitions starting with `ptr`, such as `ptrvalue`.\n- `\"/(?<=\\\\bI)(?=[A-Z])/\"` -- The break would occur before an uppercase letter following an `I` at a word boundary, helping with interface definitions like `IError`.",
+                  "type": "string"
+                },
+                {
+                  "markdownDescription": "Defines a word break rule based on a string.\n\nFormat:\n- `\"before|after\"` -- Matches a word break between `before` and `after`\n- `\"before|after$\"` -- Matches a word break between `before` and `after` at the end of a word\n- `\"^before|after\"` -- Matches a word break between `before` at the start of a word and `after`\n- `\"^before|after$\"` -- Matches a word break between `before` at the start of a word and `after` at the end of a word\n- `\"before|\"` -- Matches a word break after `before`\n- `\"^before|\"` -- Matches a word break after `before` at the start of a word\n- `\"|after\"` -- Matches a word break before `after`\n- `\"|after$\"` -- Matches a word break before `after` at the end of a word\n\n\nWhere `before` is the text before the word break and `after` is the text after the word break.\n\nSpecial characters like `|`, `^`, and `$` have specific meanings.\n- `|` -- Represents the position of the word break\n- `^` -- Indicates the start of a word\n- `$` -- Indicates the end of a word\n\nFor more complicated word break rules, consider using regular expressions with the  {@link  SoftWordBreakRegExp }  type.\n\nExamples:\n- `\"^ptr|\"` -- Would help with pointer definitions starting with `ptr`, such as `ptrvalue`.\n- `\"^I|\"` -- Would help with interface definitions starting with `I`, such as `IERROR`.",
+                  "type": "string"
+                },
+                {
+                  "items": {
+                    "anyOf": [
+                      {
+                        "markdownDescription": "Represents a regular expression used for word break rules.\n\nThe matching string will be prefixed and suffixed with a soft-hyphen.\nIf the matching string is zero length, only a single soft-hyphen will be inserted.\nIt is best to use lookahead and lookbehind assertions to ensure correct word break positions.\n\nExamples:\n- `\"/(?<=\\\\bptr)/\"` -- The break would occur after the `ptr`, helping with pointer definitions starting with `ptr`, such as `ptrvalue`.\n- `\"/(?<=\\\\bI)(?=[A-Z])/\"` -- The break would occur before an uppercase letter following an `I` at a word boundary, helping with interface definitions like `IError`.",
+                        "type": "string"
+                      },
+                      {
+                        "markdownDescription": "Defines a word break rule based on a string.\n\nFormat:\n- `\"before|after\"` -- Matches a word break between `before` and `after`\n- `\"before|after$\"` -- Matches a word break between `before` and `after` at the end of a word\n- `\"^before|after\"` -- Matches a word break between `before` at the start of a word and `after`\n- `\"^before|after$\"` -- Matches a word break between `before` at the start of a word and `after` at the end of a word\n- `\"before|\"` -- Matches a word break after `before`\n- `\"^before|\"` -- Matches a word break after `before` at the start of a word\n- `\"|after\"` -- Matches a word break before `after`\n- `\"|after$\"` -- Matches a word break before `after` at the end of a word\n\n\nWhere `before` is the text before the word break and `after` is the text after the word break.\n\nSpecial characters like `|`, `^`, and `$` have specific meanings.\n- `|` -- Represents the position of the word break\n- `^` -- Indicates the start of a word\n- `$` -- Indicates the end of a word\n\nFor more complicated word break rules, consider using regular expressions with the  {@link  SoftWordBreakRegExp }  type.\n\nExamples:\n- `\"^ptr|\"` -- Would help with pointer definitions starting with `ptr`, such as `ptrvalue`.\n- `\"^I|\"` -- Would help with interface definitions starting with `I`, such as `IERROR`.",
+                        "type": "string"
+                      }
+                    ]
+                  },
+                  "type": "array"
+                }
+              ],
+              "markdownDescription": "A named set of soft word break rules."
+            },
+            "markdownDescription": "Defines a set of word break rules that can be used for text segmentation.\n\nSoft word breaks are done through injecting soft-hyphens at the appropriate positions in the text before spell checking.\n\nThis allows for word breaks that might not be captured by the camel case detection.\n\nNote: soft-hyphens are removed before checking the word against the dictionaries.\n\nFor example, if there is a soft-hyphen (represented by a `|`) injected between `error` and `code`\n`error|code`, the following words would be checked against\nthe dictionaries: `errorcode`, `error`, and `code`.",
+            "type": "object"
+          },
+          "cSpell.softWordBreaks": {
+            "additionalProperties": {
+              "type": "boolean"
+            },
+            "markdownDescription": "Allows enabling or disabling soft word break rules by name.",
+            "type": "object"
           },
           "cSpell.substitutionDefinitions": {
             "items": {
@@ -2277,19 +2669,8 @@
             "markdownDescription": "The set of substitutions to apply to a document before spell checking.",
             "type": "array"
           },
-          "cSpell.unknownWords": {
-            "default": "report-all",
-            "enum": [
-              "report-all",
-              "report-simple",
-              "report-common-typos",
-              "report-flagged"
-            ],
-            "markdownDescription": "Controls how unknown words are handled.\n\n- `report-all` - Report all unknown words (default behavior)\n- `report-simple` - Report unknown words that have simple spelling errors, typos, and flagged words.\n- `report-common-typos` - Report unknown words that are common typos and flagged words.\n- `report-flagged` - Report unknown words that are flagged.",
-            "type": "string"
-          },
           "cSpell.useIntlWordSegmentation": {
-            "markdownDescription": "Enables enables locale-sensitive text segmentation to support languages like Japanese, Chinese, Thai, Lao, Khmer, Myanmar, etc.\nThe locale used for the segmentation is based on the  {@link  language  }  setting.",
+            "markdownDescription": "Enables locale-sensitive text segmentation to support languages like Japanese, Chinese, Thai, Lao, Khmer, Myanmar, etc.\nThe locale used for the segmentation is based on the  {@link  language  }  setting.",
             "type": "boolean"
           },
           "cSpell.vfs": {
@@ -2707,6 +3088,16 @@
                       "markdownDescription": "Some dictionaries may contain forbidden words to prevent compounding from generating\nwords that are not valid in the language. These are often\nwords that are used in other languages or might be generated through compounding.\nThis setting allows flagged words to be ignored when checking the dictionary.\nThe effect is similar to the word not being in the dictionary.",
                       "type": "boolean"
                     },
+                    "kind": {
+                      "enum": [
+                        "words",
+                        "flag-words",
+                        "ignore-words",
+                        "suggest-words"
+                      ],
+                      "markdownDescription": "Used to specify the type of dictionary being referenced.\nValues:\n- `words` - (default) A dictionary containing words.\n- `flag-words` - A dictionary containing flag words. Words found in the dictionary will be treated like `flagWords`.\n- `ignore-words` - A dictionary containing words to ignore.\n   This is the same as setting `noSuggest` to `true`.\n- `suggest-words` - A dictionary containing suggested word corrections. Words found in the\n   dictionary will be treated like `suggestWords`.",
+                      "type": "string"
+                    },
                     "name": {
                       "markdownDescription": "The reference name of the dictionary.\n\n\nExample: `My Words` or `custom`\n\n\nIf the name matches a pre-defined dictionary, it will override the pre-defined dictionary.\nIf you use: `typescript` it will replace the built-in TypeScript dictionary.",
                       "title": "Name of Dictionary",
@@ -2807,6 +3198,16 @@
                       "markdownDescription": "Some dictionaries may contain forbidden words to prevent compounding from generating\nwords that are not valid in the language. These are often\nwords that are used in other languages or might be generated through compounding.\nThis setting allows flagged words to be ignored when checking the dictionary.\nThe effect is similar to the word not being in the dictionary.",
                       "type": "boolean"
                     },
+                    "kind": {
+                      "enum": [
+                        "words",
+                        "flag-words",
+                        "ignore-words",
+                        "suggest-words"
+                      ],
+                      "markdownDescription": "Used to specify the type of dictionary being referenced.\nValues:\n- `words` - (default) A dictionary containing words.\n- `flag-words` - A dictionary containing flag words. Words found in the dictionary will be treated like `flagWords`.\n- `ignore-words` - A dictionary containing words to ignore.\n   This is the same as setting `noSuggest` to `true`.\n- `suggest-words` - A dictionary containing suggested word corrections. Words found in the\n   dictionary will be treated like `suggestWords`.",
+                      "type": "string"
+                    },
                     "name": {
                       "markdownDescription": "The reference name of the dictionary.\n\n\nExample: `My Words` or `custom`\n\n\nIf the name matches a pre-defined dictionary, it will override the pre-defined dictionary.\nIf you use: `typescript` it will replace the built-in TypeScript dictionary.",
                       "pattern": "^(?=[^!*,;{}[\\]~\\n]+$)(?=(.*\\w)).+$",
@@ -2875,6 +3276,16 @@
                       "markdownDescription": "Some dictionaries may contain forbidden words to prevent compounding from generating\nwords that are not valid in the language. These are often\nwords that are used in other languages or might be generated through compounding.\nThis setting allows flagged words to be ignored when checking the dictionary.\nThe effect is similar to the word not being in the dictionary.",
                       "type": "boolean"
                     },
+                    "kind": {
+                      "enum": [
+                        "words",
+                        "flag-words",
+                        "ignore-words",
+                        "suggest-words"
+                      ],
+                      "markdownDescription": "Used to specify the type of dictionary being referenced.\nValues:\n- `words` - (default) A dictionary containing words.\n- `flag-words` - A dictionary containing flag words. Words found in the dictionary will be treated like `flagWords`.\n- `ignore-words` - A dictionary containing words to ignore.\n   This is the same as setting `noSuggest` to `true`.\n- `suggest-words` - A dictionary containing suggested word corrections. Words found in the\n   dictionary will be treated like `suggestWords`.",
+                      "type": "string"
+                    },
                     "name": {
                       "markdownDescription": "This is the name of a dictionary.\n\nName Format:\n- Must contain at least 1 number or letter.\n- Spaces are allowed.\n- Leading and trailing space will be removed.\n- Names ARE case-sensitive.\n- Must not contain `*`, `!`, `;`, `,`, `{`, `}`, `[`, `]`, `~`.",
                       "type": "string"
@@ -2917,6 +3328,16 @@
                     "ignoreForbiddenWords": {
                       "markdownDescription": "Some dictionaries may contain forbidden words to prevent compounding from generating\nwords that are not valid in the language. These are often\nwords that are used in other languages or might be generated through compounding.\nThis setting allows flagged words to be ignored when checking the dictionary.\nThe effect is similar to the word not being in the dictionary.",
                       "type": "boolean"
+                    },
+                    "kind": {
+                      "enum": [
+                        "words",
+                        "flag-words",
+                        "ignore-words",
+                        "suggest-words"
+                      ],
+                      "markdownDescription": "Used to specify the type of dictionary being referenced.\nValues:\n- `words` - (default) A dictionary containing words.\n- `flag-words` - A dictionary containing flag words. Words found in the dictionary will be treated like `flagWords`.\n- `ignore-words` - A dictionary containing words to ignore.\n   This is the same as setting `noSuggest` to `true`.\n- `suggest-words` - A dictionary containing suggested word corrections. Words found in the\n   dictionary will be treated like `suggestWords`.",
+                      "type": "string"
                     },
                     "name": {
                       "markdownDescription": "This is the name of a dictionary.\n\nName Format:\n- Must contain at least 1 number or letter.\n- Spaces are allowed.\n- Leading and trailing space will be removed.\n- Names ARE case-sensitive.\n- Must not contain `*`, `!`, `;`, `,`, `{`, `}`, `[`, `]`, `~`.",
@@ -3060,6 +3481,16 @@
                             "markdownDescription": "Some dictionaries may contain forbidden words to prevent compounding from generating\nwords that are not valid in the language. These are often\nwords that are used in other languages or might be generated through compounding.\nThis setting allows flagged words to be ignored when checking the dictionary.\nThe effect is similar to the word not being in the dictionary.",
                             "type": "boolean"
                           },
+                          "kind": {
+                            "enum": [
+                              "words",
+                              "flag-words",
+                              "ignore-words",
+                              "suggest-words"
+                            ],
+                            "markdownDescription": "Used to specify the type of dictionary being referenced.\nValues:\n- `words` - (default) A dictionary containing words.\n- `flag-words` - A dictionary containing flag words. Words found in the dictionary will be treated like `flagWords`.\n- `ignore-words` - A dictionary containing words to ignore.\n   This is the same as setting `noSuggest` to `true`.\n- `suggest-words` - A dictionary containing suggested word corrections. Words found in the\n   dictionary will be treated like `suggestWords`.",
+                            "type": "string"
+                          },
                           "name": {
                             "markdownDescription": "The reference name of the dictionary.\n\n\nExample: `My Words` or `custom`\n\n\nIf the name matches a pre-defined dictionary, it will override the pre-defined dictionary.\nIf you use: `typescript` it will replace the built-in TypeScript dictionary.",
                             "pattern": "^(?=[^!*,;{}[\\]~\\n]+$)(?=(.*\\w)).+$",
@@ -3128,6 +3559,16 @@
                             "markdownDescription": "Some dictionaries may contain forbidden words to prevent compounding from generating\nwords that are not valid in the language. These are often\nwords that are used in other languages or might be generated through compounding.\nThis setting allows flagged words to be ignored when checking the dictionary.\nThe effect is similar to the word not being in the dictionary.",
                             "type": "boolean"
                           },
+                          "kind": {
+                            "enum": [
+                              "words",
+                              "flag-words",
+                              "ignore-words",
+                              "suggest-words"
+                            ],
+                            "markdownDescription": "Used to specify the type of dictionary being referenced.\nValues:\n- `words` - (default) A dictionary containing words.\n- `flag-words` - A dictionary containing flag words. Words found in the dictionary will be treated like `flagWords`.\n- `ignore-words` - A dictionary containing words to ignore.\n   This is the same as setting `noSuggest` to `true`.\n- `suggest-words` - A dictionary containing suggested word corrections. Words found in the\n   dictionary will be treated like `suggestWords`.",
+                            "type": "string"
+                          },
                           "name": {
                             "markdownDescription": "This is the name of a dictionary.\n\nName Format:\n- Must contain at least 1 number or letter.\n- Spaces are allowed.\n- Leading and trailing space will be removed.\n- Names ARE case-sensitive.\n- Must not contain `*`, `!`, `;`, `,`, `{`, `}`, `[`, `]`, `~`.",
                             "type": "string"
@@ -3170,6 +3611,16 @@
                           "ignoreForbiddenWords": {
                             "markdownDescription": "Some dictionaries may contain forbidden words to prevent compounding from generating\nwords that are not valid in the language. These are often\nwords that are used in other languages or might be generated through compounding.\nThis setting allows flagged words to be ignored when checking the dictionary.\nThe effect is similar to the word not being in the dictionary.",
                             "type": "boolean"
+                          },
+                          "kind": {
+                            "enum": [
+                              "words",
+                              "flag-words",
+                              "ignore-words",
+                              "suggest-words"
+                            ],
+                            "markdownDescription": "Used to specify the type of dictionary being referenced.\nValues:\n- `words` - (default) A dictionary containing words.\n- `flag-words` - A dictionary containing flag words. Words found in the dictionary will be treated like `flagWords`.\n- `ignore-words` - A dictionary containing words to ignore.\n   This is the same as setting `noSuggest` to `true`.\n- `suggest-words` - A dictionary containing suggested word corrections. Words found in the\n   dictionary will be treated like `suggestWords`.",
+                            "type": "string"
                           },
                           "name": {
                             "markdownDescription": "This is the name of a dictionary.\n\nName Format:\n- Must contain at least 1 number or letter.\n- Spaces are allowed.\n- Leading and trailing space will be removed.\n- Names ARE case-sensitive.\n- Must not contain `*`, `!`, `;`, `,`, `{`, `}`, `[`, `]`, `~`.",
@@ -3390,7 +3841,9 @@
                       "type": "array"
                     }
                   ],
-                  "markdownDescription": "The language id.  Ex: `typescript`, `html`, or `php`.  `*` -- will match all languages."
+                  "markdownDescription": "The language id.  Ex: `typescript`, `html`, or `php`.  `*` -- will match all languages.",
+                  "note": "Matches against `languageId` (File Type)",
+                  "order": 1
                 },
                 "locale": {
                   "anyOf": [
@@ -3406,7 +3859,9 @@
                       "type": "array"
                     }
                   ],
-                  "markdownDescription": "The locale filter, matches against the language. This can be a comma separated list. `*` will match all locales."
+                  "markdownDescription": "The locale filter, matches against the language. This can be a comma separated list. `*` will match all locales.",
+                  "note": "Matches against `language`",
+                  "order": 2
                 },
                 "name": {
                   "markdownDescription": "Optional name of configuration.",
@@ -3466,6 +3921,45 @@
                   },
                   "markdownDescription": "Defines a list of patterns that can be used with the  {@link  ignoreRegExpList }  and\n {@link  includeRegExpList }  options.\n\nFor example:\n\n```javascript\n\"ignoreRegExpList\": [\"comments\"],\n\"patterns\": [\n  {\n    \"name\": \"comment-single-line\",\n    \"pattern\": \"/#.*/g\"\n  },\n  {\n    \"name\": \"comment-multi-line\",\n    \"pattern\": \"/(?:\\\\/\\\\*[\\\\s\\\\S]*?\\\\*\\\\/)/g\"\n  },\n  // You can also combine multiple named patterns into one single named pattern\n  {\n    \"name\": \"comments\",\n    \"pattern\": [\"comment-single-line\", \"comment-multi-line\"]\n  }\n]\n```",
                   "type": "array"
+                },
+                "softWordBreakDefinitions": {
+                  "additionalProperties": {
+                    "anyOf": [
+                      {
+                        "markdownDescription": "Represents a regular expression used for word break rules.\n\nThe matching string will be prefixed and suffixed with a soft-hyphen.\nIf the matching string is zero length, only a single soft-hyphen will be inserted.\nIt is best to use lookahead and lookbehind assertions to ensure correct word break positions.\n\nExamples:\n- `\"/(?<=\\\\bptr)/\"` -- The break would occur after the `ptr`, helping with pointer definitions starting with `ptr`, such as `ptrvalue`.\n- `\"/(?<=\\\\bI)(?=[A-Z])/\"` -- The break would occur before an uppercase letter following an `I` at a word boundary, helping with interface definitions like `IError`.",
+                        "type": "string"
+                      },
+                      {
+                        "markdownDescription": "Defines a word break rule based on a string.\n\nFormat:\n- `\"before|after\"` -- Matches a word break between `before` and `after`\n- `\"before|after$\"` -- Matches a word break between `before` and `after` at the end of a word\n- `\"^before|after\"` -- Matches a word break between `before` at the start of a word and `after`\n- `\"^before|after$\"` -- Matches a word break between `before` at the start of a word and `after` at the end of a word\n- `\"before|\"` -- Matches a word break after `before`\n- `\"^before|\"` -- Matches a word break after `before` at the start of a word\n- `\"|after\"` -- Matches a word break before `after`\n- `\"|after$\"` -- Matches a word break before `after` at the end of a word\n\n\nWhere `before` is the text before the word break and `after` is the text after the word break.\n\nSpecial characters like `|`, `^`, and `$` have specific meanings.\n- `|` -- Represents the position of the word break\n- `^` -- Indicates the start of a word\n- `$` -- Indicates the end of a word\n\nFor more complicated word break rules, consider using regular expressions with the  {@link  SoftWordBreakRegExp }  type.\n\nExamples:\n- `\"^ptr|\"` -- Would help with pointer definitions starting with `ptr`, such as `ptrvalue`.\n- `\"^I|\"` -- Would help with interface definitions starting with `I`, such as `IERROR`.",
+                        "type": "string"
+                      },
+                      {
+                        "items": {
+                          "anyOf": [
+                            {
+                              "markdownDescription": "Represents a regular expression used for word break rules.\n\nThe matching string will be prefixed and suffixed with a soft-hyphen.\nIf the matching string is zero length, only a single soft-hyphen will be inserted.\nIt is best to use lookahead and lookbehind assertions to ensure correct word break positions.\n\nExamples:\n- `\"/(?<=\\\\bptr)/\"` -- The break would occur after the `ptr`, helping with pointer definitions starting with `ptr`, such as `ptrvalue`.\n- `\"/(?<=\\\\bI)(?=[A-Z])/\"` -- The break would occur before an uppercase letter following an `I` at a word boundary, helping with interface definitions like `IError`.",
+                              "type": "string"
+                            },
+                            {
+                              "markdownDescription": "Defines a word break rule based on a string.\n\nFormat:\n- `\"before|after\"` -- Matches a word break between `before` and `after`\n- `\"before|after$\"` -- Matches a word break between `before` and `after` at the end of a word\n- `\"^before|after\"` -- Matches a word break between `before` at the start of a word and `after`\n- `\"^before|after$\"` -- Matches a word break between `before` at the start of a word and `after` at the end of a word\n- `\"before|\"` -- Matches a word break after `before`\n- `\"^before|\"` -- Matches a word break after `before` at the start of a word\n- `\"|after\"` -- Matches a word break before `after`\n- `\"|after$\"` -- Matches a word break before `after` at the end of a word\n\n\nWhere `before` is the text before the word break and `after` is the text after the word break.\n\nSpecial characters like `|`, `^`, and `$` have specific meanings.\n- `|` -- Represents the position of the word break\n- `^` -- Indicates the start of a word\n- `$` -- Indicates the end of a word\n\nFor more complicated word break rules, consider using regular expressions with the  {@link  SoftWordBreakRegExp }  type.\n\nExamples:\n- `\"^ptr|\"` -- Would help with pointer definitions starting with `ptr`, such as `ptrvalue`.\n- `\"^I|\"` -- Would help with interface definitions starting with `I`, such as `IERROR`.",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "type": "array"
+                      }
+                    ],
+                    "markdownDescription": "A named set of soft word break rules."
+                  },
+                  "markdownDescription": "Defines a set of word break rules that can be used for text segmentation.\n\nSoft word breaks are done through injecting soft-hyphens at the appropriate positions in the text before spell checking.\n\nThis allows for word breaks that might not be captured by the camel case detection.\n\nNote: soft-hyphens are removed before checking the word against the dictionaries.\n\nFor example, if there is a soft-hyphen (represented by a `|`) injected between `error` and `code`\n`error|code`, the following words would be checked against\nthe dictionaries: `errorcode`, `error`, and `code`.",
+                  "type": "object"
+                },
+                "softWordBreaks": {
+                  "additionalProperties": {
+                    "type": "boolean"
+                  },
+                  "markdownDescription": "Allows enabling or disabling soft word break rules by name.",
+                  "type": "object"
                 },
                 "substitutionDefinitions": {
                   "items": {
@@ -3557,7 +4051,7 @@
                   "type": "string"
                 },
                 "useIntlWordSegmentation": {
-                  "markdownDescription": "Enables enables locale-sensitive text segmentation to support languages like Japanese, Chinese, Thai, Lao, Khmer, Myanmar, etc.\nThe locale used for the segmentation is based on the  {@link  language  }  setting.",
+                  "markdownDescription": "Enables locale-sensitive text segmentation to support languages like Japanese, Chinese, Thai, Lao, Khmer, Myanmar, etc.\nThe locale used for the segmentation is based on the  {@link  language  }  setting.",
                   "type": "boolean"
                 },
                 "words": {
@@ -3616,234 +4110,6 @@
           }
         },
         "title": "Languages and Dictionaries",
-        "type": "object"
-      },
-      {
-        "additionalProperties": false,
-        "markdownDescription": "Settings that control the appearance of the spell checker.",
-        "order": 6,
-        "properties": {
-          "cSpell.dark": {
-            "additionalProperties": false,
-            "markdownDescription": "Decoration for dark themes.\n\nSee:\n- `#cSpell.overviewRulerColor#`\n- `#cSpell.textDecoration#`",
-            "properties": {
-              "overviewRulerColor": {
-                "default": "#348feb80",
-                "markdownDescription": "The CSS color used to show issues in the ruler.\n\nDepends upon `#cSpell.useCustomDecorations#`.\nDisable the ruler by setting `#cSpell.showInRuler#` to `false`.\n\nSee:\n- [`<color>` CSS: Cascading Style Sheets, MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value)\n- [CSS Colors, W3C Schools](https://www.w3schools.com/cssref/css_colors.php)\n- Hex colors\n\nExamples:\n- `green`\n- `DarkYellow`\n- `#ffff0080` - semi-transparent yellow.\n- `rgb(255 153 0 / 80%)`",
-                "scope": "application",
-                "type": "string"
-              },
-              "textDecoration": {
-                "markdownDescription": "The CSS Style used to decorate spelling issues. Depends upon `#cSpell.useCustomDecorations#`.\n\nThis setting is used to manually configure the text decoration. If it is not set, the following settings are used:\n- `#cSpell.textDecorationLine#` to pick the line type\n- `#cSpell.textDecorationStyle#` to pick the style\n- `#cSpell.textDecorationColor#` to set the color\n- `#cSpell.textDecorationThickness#` to set the thickness.\n\nSee: [text-decoration - CSS: Cascading Style Sheets, MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration)\n\nFormat:  `<line> [style] <color> [thickness]`\n\n- line - `underline`, `overline`, see: [text-decoration-line, MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-line)\n- style - `solid`, `wavy`, `dotted`, see: [text-decoration-style, MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-style)\n- color - see: [text-decoration-color, MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-color)\n- thickness - see: [text-decoration-thickness, MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-thickness)\n\nExamples:\n- `underline green`\n- `underline dotted yellow 0.2rem`\n- `underline wavy #ff0c 1.5px` - Wavy underline with 1.5px thickness in semi-transparent yellow.\n\nTo change the ruler color, use `#cSpell.overviewRulerColor#`.",
-                "scope": "application",
-                "type": "string"
-              },
-              "textDecorationColor": {
-                "default": "#348feb",
-                "markdownDescription": "The decoration color for normal spelling issues.\n\nSee: [text-decoration - CSS: Cascading Style Sheets, MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration)\n- color - see: [text-decoration-color, MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-color)\n\nTo change the ruler color, use `#cSpell.overviewRulerColor#`.\n\nExamples:\n- `green`\n- `yellow`\n- `#ff0c`",
-                "scope": "application",
-                "type": "string"
-              },
-              "textDecorationColorFlagged": {
-                "default": "#f44",
-                "markdownDescription": "The decoration color for flagged issues.\n\nSee: [text-decoration - CSS: Cascading Style Sheets, MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration)\n- color - see: [text-decoration-color, MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-color)\n\nExamples:\n- `green`\n- `yellow`\n- `#ff0c`",
-                "scope": "application",
-                "type": "string"
-              },
-              "textDecorationColorSuggestion": {
-                "default": "#cf88",
-                "markdownDescription": "The decoration color for spelling suggestions.\n\nSee: [text-decoration - CSS: Cascading Style Sheets, MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration)\n- color - see: [text-decoration-color, MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-color)\n\nCommon Format: `#RGBA` or `#RRGGBBAA` or `#RGB` or `#RRGGBB`\n\nExamples:\n- `green`\n- `yellow`\n- `#ff0c`",
-                "scope": "application",
-                "type": "string"
-              },
-              "textDecorationLine": {
-                "default": "underline",
-                "enum": [
-                  "underline",
-                  "overline",
-                  "line-through"
-                ],
-                "markdownDescription": "The CSS line type used to decorate issues.\n\nSee: [text-decoration - CSS: Cascading Style Sheets, MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration)\n- line - `underline`, `overline`, see: [text-decoration-line, MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-line)",
-                "scope": "application",
-                "type": "string"
-              },
-              "textDecorationStyle": {
-                "default": "dashed",
-                "enum": [
-                  "solid",
-                  "wavy",
-                  "dotted",
-                  "dashed",
-                  "double"
-                ],
-                "markdownDescription": "The CSS line style used to decorate issues.\n\nSee: [text-decoration - CSS: Cascading Style Sheets, MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration)\n- style - `solid`, `wavy`, `dotted`, see: [text-decoration-style, MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-style)",
-                "scope": "application",
-                "type": "string"
-              },
-              "textDecorationThickness": {
-                "default": "auto",
-                "markdownDescription": "The CSS line thickness used to decorate issues.\n\nSee: [text-decoration - CSS: Cascading Style Sheets, MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration)\n- thickness - see: [text-decoration-thickness, MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-thickness)\n\nExamples:\n- `auto`\n- `from-font`\n- `0.2rem`\n- `1.5px`\n- `10%`",
-                "scope": "application",
-                "type": "string"
-              }
-            },
-            "scope": "application",
-            "type": "object"
-          },
-          "cSpell.doNotUseCustomDecorationForScheme": {
-            "additionalProperties": {
-              "type": "boolean"
-            },
-            "default": {
-              "chatSessionInput": true,
-              "comment": true,
-              "vscode-scm": true
-            },
-            "markdownDescription": "Use the VS Code Diagnostic Collection to render spelling issues.\n\nWith some edit boxes, like the source control message box, the custom decorations do not show up.\nThis setting allows the use of the VS Code Diagnostic Collection to render spelling issues.",
-            "scope": "application",
-            "title": "Use VS Code to Render Spelling Issues",
-            "type": "object"
-          },
-          "cSpell.light": {
-            "additionalProperties": false,
-            "markdownDescription": "Decoration for light themes.\n\nSee:\n- `#cSpell.overviewRulerColor#`\n- `#cSpell.textDecoration#`",
-            "properties": {
-              "overviewRulerColor": {
-                "default": "#348feb80",
-                "markdownDescription": "The CSS color used to show issues in the ruler.\n\nDepends upon `#cSpell.useCustomDecorations#`.\nDisable the ruler by setting `#cSpell.showInRuler#` to `false`.\n\nSee:\n- [`<color>` CSS: Cascading Style Sheets, MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value)\n- [CSS Colors, W3C Schools](https://www.w3schools.com/cssref/css_colors.php)\n- Hex colors\n\nExamples:\n- `green`\n- `DarkYellow`\n- `#ffff0080` - semi-transparent yellow.\n- `rgb(255 153 0 / 80%)`",
-                "scope": "application",
-                "type": "string"
-              },
-              "textDecoration": {
-                "markdownDescription": "The CSS Style used to decorate spelling issues. Depends upon `#cSpell.useCustomDecorations#`.\n\nThis setting is used to manually configure the text decoration. If it is not set, the following settings are used:\n- `#cSpell.textDecorationLine#` to pick the line type\n- `#cSpell.textDecorationStyle#` to pick the style\n- `#cSpell.textDecorationColor#` to set the color\n- `#cSpell.textDecorationThickness#` to set the thickness.\n\nSee: [text-decoration - CSS: Cascading Style Sheets, MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration)\n\nFormat:  `<line> [style] <color> [thickness]`\n\n- line - `underline`, `overline`, see: [text-decoration-line, MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-line)\n- style - `solid`, `wavy`, `dotted`, see: [text-decoration-style, MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-style)\n- color - see: [text-decoration-color, MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-color)\n- thickness - see: [text-decoration-thickness, MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-thickness)\n\nExamples:\n- `underline green`\n- `underline dotted yellow 0.2rem`\n- `underline wavy #ff0c 1.5px` - Wavy underline with 1.5px thickness in semi-transparent yellow.\n\nTo change the ruler color, use `#cSpell.overviewRulerColor#`.",
-                "scope": "application",
-                "type": "string"
-              },
-              "textDecorationColor": {
-                "default": "#348feb",
-                "markdownDescription": "The decoration color for normal spelling issues.\n\nSee: [text-decoration - CSS: Cascading Style Sheets, MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration)\n- color - see: [text-decoration-color, MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-color)\n\nTo change the ruler color, use `#cSpell.overviewRulerColor#`.\n\nExamples:\n- `green`\n- `yellow`\n- `#ff0c`",
-                "scope": "application",
-                "type": "string"
-              },
-              "textDecorationColorFlagged": {
-                "default": "#f44",
-                "markdownDescription": "The decoration color for flagged issues.\n\nSee: [text-decoration - CSS: Cascading Style Sheets, MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration)\n- color - see: [text-decoration-color, MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-color)\n\nExamples:\n- `green`\n- `yellow`\n- `#ff0c`",
-                "scope": "application",
-                "type": "string"
-              },
-              "textDecorationColorSuggestion": {
-                "default": "#cf88",
-                "markdownDescription": "The decoration color for spelling suggestions.\n\nSee: [text-decoration - CSS: Cascading Style Sheets, MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration)\n- color - see: [text-decoration-color, MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-color)\n\nCommon Format: `#RGBA` or `#RRGGBBAA` or `#RGB` or `#RRGGBB`\n\nExamples:\n- `green`\n- `yellow`\n- `#ff0c`",
-                "scope": "application",
-                "type": "string"
-              },
-              "textDecorationLine": {
-                "default": "underline",
-                "enum": [
-                  "underline",
-                  "overline",
-                  "line-through"
-                ],
-                "markdownDescription": "The CSS line type used to decorate issues.\n\nSee: [text-decoration - CSS: Cascading Style Sheets, MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration)\n- line - `underline`, `overline`, see: [text-decoration-line, MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-line)",
-                "scope": "application",
-                "type": "string"
-              },
-              "textDecorationStyle": {
-                "default": "dashed",
-                "enum": [
-                  "solid",
-                  "wavy",
-                  "dotted",
-                  "dashed",
-                  "double"
-                ],
-                "markdownDescription": "The CSS line style used to decorate issues.\n\nSee: [text-decoration - CSS: Cascading Style Sheets, MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration)\n- style - `solid`, `wavy`, `dotted`, see: [text-decoration-style, MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-style)",
-                "scope": "application",
-                "type": "string"
-              },
-              "textDecorationThickness": {
-                "default": "auto",
-                "markdownDescription": "The CSS line thickness used to decorate issues.\n\nSee: [text-decoration - CSS: Cascading Style Sheets, MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration)\n- thickness - see: [text-decoration-thickness, MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-thickness)\n\nExamples:\n- `auto`\n- `from-font`\n- `0.2rem`\n- `1.5px`\n- `10%`",
-                "scope": "application",
-                "type": "string"
-              }
-            },
-            "scope": "application",
-            "type": "object"
-          },
-          "cSpell.overviewRulerColor": {
-            "default": "#348feb80",
-            "markdownDescription": "The CSS color used to show issues in the ruler.\n\nDepends upon `#cSpell.useCustomDecorations#`.\nDisable the ruler by setting `#cSpell.showInRuler#` to `false`.\n\nSee:\n- [`<color>` CSS: Cascading Style Sheets, MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value)\n- [CSS Colors, W3C Schools](https://www.w3schools.com/cssref/css_colors.php)\n- Hex colors\n\nExamples:\n- `green`\n- `DarkYellow`\n- `#ffff0080` - semi-transparent yellow.\n- `rgb(255 153 0 / 80%)`",
-            "scope": "application",
-            "type": "string"
-          },
-          "cSpell.showInRuler": {
-            "default": true,
-            "markdownDescription": "Show spelling issues in the editor ruler.\n\nNote: This setting is only used when `#cSpell.useCustomDecorations#` is `true`.\n\nNote: To set the color of the ruler, use `#cSpell.overviewRulerColor#`.",
-            "scope": "application",
-            "type": "boolean"
-          },
-          "cSpell.textDecoration": {
-            "markdownDescription": "The CSS Style used to decorate spelling issues. Depends upon `#cSpell.useCustomDecorations#`.\n\nThis setting is used to manually configure the text decoration. If it is not set, the following settings are used:\n- `#cSpell.textDecorationLine#` to pick the line type\n- `#cSpell.textDecorationStyle#` to pick the style\n- `#cSpell.textDecorationColor#` to set the color\n- `#cSpell.textDecorationThickness#` to set the thickness.\n\nSee: [text-decoration - CSS: Cascading Style Sheets, MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration)\n\nFormat:  `<line> [style] <color> [thickness]`\n\n- line - `underline`, `overline`, see: [text-decoration-line, MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-line)\n- style - `solid`, `wavy`, `dotted`, see: [text-decoration-style, MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-style)\n- color - see: [text-decoration-color, MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-color)\n- thickness - see: [text-decoration-thickness, MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-thickness)\n\nExamples:\n- `underline green`\n- `underline dotted yellow 0.2rem`\n- `underline wavy #ff0c 1.5px` - Wavy underline with 1.5px thickness in semi-transparent yellow.\n\nTo change the ruler color, use `#cSpell.overviewRulerColor#`.",
-            "scope": "application",
-            "type": "string"
-          },
-          "cSpell.textDecorationColor": {
-            "default": "#348feb",
-            "markdownDescription": "The decoration color for normal spelling issues.\n\nSee: [text-decoration - CSS: Cascading Style Sheets, MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration)\n- color - see: [text-decoration-color, MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-color)\n\nTo change the ruler color, use `#cSpell.overviewRulerColor#`.\n\nExamples:\n- `green`\n- `yellow`\n- `#ff0c`",
-            "scope": "application",
-            "type": "string"
-          },
-          "cSpell.textDecorationColorFlagged": {
-            "default": "#f44",
-            "markdownDescription": "The decoration color for flagged issues.\n\nSee: [text-decoration - CSS: Cascading Style Sheets, MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration)\n- color - see: [text-decoration-color, MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-color)\n\nExamples:\n- `green`\n- `yellow`\n- `#ff0c`",
-            "scope": "application",
-            "type": "string"
-          },
-          "cSpell.textDecorationColorSuggestion": {
-            "default": "#cf88",
-            "markdownDescription": "The decoration color for spelling suggestions.\n\nSee: [text-decoration - CSS: Cascading Style Sheets, MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration)\n- color - see: [text-decoration-color, MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-color)\n\nCommon Format: `#RGBA` or `#RRGGBBAA` or `#RGB` or `#RRGGBB`\n\nExamples:\n- `green`\n- `yellow`\n- `#ff0c`",
-            "scope": "application",
-            "type": "string"
-          },
-          "cSpell.textDecorationLine": {
-            "default": "underline",
-            "enum": [
-              "underline",
-              "overline",
-              "line-through"
-            ],
-            "markdownDescription": "The CSS line type used to decorate issues.\n\nSee: [text-decoration - CSS: Cascading Style Sheets, MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration)\n- line - `underline`, `overline`, see: [text-decoration-line, MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-line)",
-            "scope": "application",
-            "type": "string"
-          },
-          "cSpell.textDecorationStyle": {
-            "default": "dashed",
-            "enum": [
-              "solid",
-              "wavy",
-              "dotted",
-              "dashed",
-              "double"
-            ],
-            "markdownDescription": "The CSS line style used to decorate issues.\n\nSee: [text-decoration - CSS: Cascading Style Sheets, MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration)\n- style - `solid`, `wavy`, `dotted`, see: [text-decoration-style, MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-style)",
-            "scope": "application",
-            "type": "string"
-          },
-          "cSpell.textDecorationThickness": {
-            "default": "auto",
-            "markdownDescription": "The CSS line thickness used to decorate issues.\n\nSee: [text-decoration - CSS: Cascading Style Sheets, MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration)\n- thickness - see: [text-decoration-thickness, MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-thickness)\n\nExamples:\n- `auto`\n- `from-font`\n- `0.2rem`\n- `1.5px`\n- `10%`",
-            "scope": "application",
-            "type": "string"
-          },
-          "cSpell.useCustomDecorations": {
-            "default": false,
-            "markdownDescription": "Draw custom decorations on Spelling Issues.\n- `true` - Use custom decorations. - VS Code Diagnostic Severity Levels are not used.\n- `false` - Use the VS Code Diagnostic Collection to render spelling issues.\n\nNote: This setting overrides the VS Code Diagnostics setting: `#cSpell.diagnosticLevel#`.",
-            "scope": "application",
-            "type": "boolean"
-          }
-        },
-        "title": "Appearance",
         "type": "object"
       },
       {
@@ -3945,6 +4211,16 @@
                     "ignoreForbiddenWords": {
                       "markdownDescription": "Some dictionaries may contain forbidden words to prevent compounding from generating\nwords that are not valid in the language. These are often\nwords that are used in other languages or might be generated through compounding.\nThis setting allows flagged words to be ignored when checking the dictionary.\nThe effect is similar to the word not being in the dictionary.",
                       "type": "boolean"
+                    },
+                    "kind": {
+                      "enum": [
+                        "words",
+                        "flag-words",
+                        "ignore-words",
+                        "suggest-words"
+                      ],
+                      "markdownDescription": "Used to specify the type of dictionary being referenced.\nValues:\n- `words` - (default) A dictionary containing words.\n- `flag-words` - A dictionary containing flag words. Words found in the dictionary will be treated like `flagWords`.\n- `ignore-words` - A dictionary containing words to ignore.\n   This is the same as setting `noSuggest` to `true`.\n- `suggest-words` - A dictionary containing suggested word corrections. Words found in the\n   dictionary will be treated like `suggestWords`.",
+                      "type": "string"
                     },
                     "name": {
                       "markdownDescription": "The reference name of the dictionary.\n\n\nExample: `My Words` or `custom`\n\n\nIf the name matches a pre-defined dictionary, it will override the pre-defined dictionary.\nIf you use: `typescript` it will replace the built-in TypeScript dictionary.",
@@ -4100,6 +4376,16 @@
                       "markdownDescription": "Some dictionaries may contain forbidden words to prevent compounding from generating\nwords that are not valid in the language. These are often\nwords that are used in other languages or might be generated through compounding.\nThis setting allows flagged words to be ignored when checking the dictionary.\nThe effect is similar to the word not being in the dictionary.",
                       "type": "boolean"
                     },
+                    "kind": {
+                      "enum": [
+                        "words",
+                        "flag-words",
+                        "ignore-words",
+                        "suggest-words"
+                      ],
+                      "markdownDescription": "Used to specify the type of dictionary being referenced.\nValues:\n- `words` - (default) A dictionary containing words.\n- `flag-words` - A dictionary containing flag words. Words found in the dictionary will be treated like `flagWords`.\n- `ignore-words` - A dictionary containing words to ignore.\n   This is the same as setting `noSuggest` to `true`.\n- `suggest-words` - A dictionary containing suggested word corrections. Words found in the\n   dictionary will be treated like `suggestWords`.",
+                      "type": "string"
+                    },
                     "name": {
                       "markdownDescription": "The reference name of the dictionary.\n\n\nExample: `My Words` or `custom`\n\n\nIf the name matches a pre-defined dictionary, it will override the pre-defined dictionary.\nIf you use: `typescript` it will replace the built-in TypeScript dictionary.",
                       "pattern": "^(?=[^!*,;{}[\\]~\\n]+$)(?=(.*\\w)).+$",
@@ -4254,6 +4540,16 @@
                       "markdownDescription": "Some dictionaries may contain forbidden words to prevent compounding from generating\nwords that are not valid in the language. These are often\nwords that are used in other languages or might be generated through compounding.\nThis setting allows flagged words to be ignored when checking the dictionary.\nThe effect is similar to the word not being in the dictionary.",
                       "type": "boolean"
                     },
+                    "kind": {
+                      "enum": [
+                        "words",
+                        "flag-words",
+                        "ignore-words",
+                        "suggest-words"
+                      ],
+                      "markdownDescription": "Used to specify the type of dictionary being referenced.\nValues:\n- `words` - (default) A dictionary containing words.\n- `flag-words` - A dictionary containing flag words. Words found in the dictionary will be treated like `flagWords`.\n- `ignore-words` - A dictionary containing words to ignore.\n   This is the same as setting `noSuggest` to `true`.\n- `suggest-words` - A dictionary containing suggested word corrections. Words found in the\n   dictionary will be treated like `suggestWords`.",
+                      "type": "string"
+                    },
                     "name": {
                       "markdownDescription": "The reference name of the dictionary.\n\n\nExample: `My Words` or `custom`\n\n\nIf the name matches a pre-defined dictionary, it will override the pre-defined dictionary.\nIf you use: `typescript` it will replace the built-in TypeScript dictionary.",
                       "pattern": "^(?=[^!*,;{}[\\]~\\n]+$)(?=(.*\\w)).+$",
@@ -4358,6 +4654,264 @@
           }
         },
         "title": "Legacy",
+        "type": "object"
+      },
+      {
+        "additionalProperties": false,
+        "markdownDescription": "Settings that control the menu items and actions available in the spell checker.",
+        "order": 7,
+        "properties": {
+          "cSpell.allowWordsToBeAddTo": {
+            "additionalProperties": false,
+            "default": {
+              "cspell": true,
+              "dictionaries": true,
+              "folder": true,
+              "user": true,
+              "workspace": true
+            },
+            "markdownDescription": "Specify where words can be added to. This setting is used to control the \"Add to Dictionary\" code actions.\n\n**Examples**\n\nTo disable adding words to user settings, but allow adding words to workspace settings:\n\n```js\n\"cSpell.addWordTo\": {\n  \"user\": false // Do not allow adding words to user settings\n}\n```\n\nTo disable adding words to all VSCode settings:\n\n```js\n\"cSpell.addWordTo\": {\n  \"user\": false       // Do not allow adding words to user settings\n  \"workspace\": false, // Do not allow adding words to workspace settings\n  \"folder\": false     // Do not allow adding words to folder settings\n}\n```",
+            "properties": {
+              "cspell": {
+                "default": true,
+                "markdownDescription": "Allow adding words cspell configuration file settings.\n- `true` - allow add to cspell settings\n- `false` - never enable add to cspell settings",
+                "type": "boolean"
+              },
+              "dictionaries": {
+                "default": true,
+                "markdownDescription": "Allow adding words user defined dictionaries settings.\n- `true` - allow add to cspell settings\n- `false` - never enable add to cspell settings",
+                "type": "boolean"
+              },
+              "folder": {
+                "default": true,
+                "markdownDescription": "Allow adding words to folder settings.\n- `true` - allow add to folder settings\n- `false` - never enable add to folder settings",
+                "type": "boolean"
+              },
+              "user": {
+                "default": true,
+                "markdownDescription": "Allow adding words to user settings.\n- `true` - allow add to user settings\n- `false` - never enable add to user settings",
+                "type": "boolean"
+              },
+              "workspace": {
+                "default": true,
+                "markdownDescription": "Allow adding words to workspace settings.\n- `true` - allow  add to workspace settings\n- `false` - never enable add to workspace settings",
+                "type": "boolean"
+              }
+            },
+            "scope": "resource",
+            "type": "object"
+          },
+          "cSpell.hideAddToDictionaryCodeActions": {
+            "default": false,
+            "markdownDescription": "Hide the options to add words to dictionaries or settings.",
+            "scope": "resource",
+            "type": "boolean"
+          },
+          "cSpell.menuItemsOnCSpellConfigMenu": {
+            "additionalProperties": false,
+            "default": {
+              "createCSpellConfig": true,
+              "createCustomDictionary": true
+            },
+            "markdownDescription": "Control which menu items are shown on the Spelling Config Menu.",
+            "properties": {
+              "createCSpellConfig": {
+                "markdownDescription": "Enable Menu Item: Create a CSpell Configuration File",
+                "type": "boolean"
+              },
+              "createCustomDictionary": {
+                "markdownDescription": "Enable Menu Item: Create a Custom Dictionary File",
+                "type": "boolean"
+              }
+            },
+            "scope": "resource",
+            "type": "object"
+          },
+          "cSpell.menuItemsOnEditorContextMenu": {
+            "additionalProperties": false,
+            "default": {
+              "hideIssues": true,
+              "showIssues": true,
+              "spellingContextMenu": true,
+              "suggestSpellingCorrections": true
+            },
+            "markdownDescription": "Control which menu items are shown on the Editor Context Menu.",
+            "properties": {
+              "hideIssues": {
+                "markdownDescription": "Enable Menu Item: `Hide Spelling Issues`",
+                "type": "boolean"
+              },
+              "showIssues": {
+                "markdownDescription": "Enable Menu Item: `Show Spelling Issues`",
+                "type": "boolean"
+              },
+              "spellingContextMenu": {
+                "markdownDescription": "Enable Menu Item: `Spelling`",
+                "type": "boolean"
+              },
+              "suggestSpellingCorrections": {
+                "markdownDescription": "Enable Menu Item: `Spelling Suggestions...`",
+                "type": "boolean"
+              }
+            },
+            "scope": "resource",
+            "type": "object"
+          },
+          "cSpell.menuItemsOnSpellCheckerActionMenu": {
+            "additionalProperties": false,
+            "default": {
+              "allowDocumentScheme": true,
+              "createCSpellConfig": true,
+              "disableFileType": true,
+              "editKeyboardShortcuts": true,
+              "editSpellCheckerSettings": true,
+              "enableFileType": true,
+              "excludeDocumentScheme": true,
+              "hideIssues": true,
+              "openConfigFiles": true,
+              "openFileInfoView": true,
+              "openIssuesPanel": true,
+              "openSpellCheckerConsole": true,
+              "showIssues": true
+            },
+            "markdownDescription": "Control which menu items are shown on the Spell Checker Action Menu.",
+            "properties": {
+              "allowDocumentScheme": {
+                "type": "boolean"
+              },
+              "createCSpellConfig": {
+                "type": "boolean"
+              },
+              "disableFileType": {
+                "type": "boolean"
+              },
+              "editKeyboardShortcuts": {
+                "type": "boolean"
+              },
+              "editSpellCheckerSettings": {
+                "type": "boolean"
+              },
+              "enableFileType": {
+                "type": "boolean"
+              },
+              "excludeDocumentScheme": {
+                "type": "boolean"
+              },
+              "hideIssues": {
+                "type": "boolean"
+              },
+              "openConfigFiles": {
+                "type": "boolean"
+              },
+              "openFileInfoView": {
+                "type": "boolean"
+              },
+              "openIssuesPanel": {
+                "type": "boolean"
+              },
+              "openSpellCheckerConsole": {
+                "type": "boolean"
+              },
+              "showIssues": {
+                "type": "boolean"
+              }
+            },
+            "scope": "resource",
+            "type": "object"
+          },
+          "cSpell.menuItemsOnSpellingContextMenu": {
+            "additionalProperties": false,
+            "default": {
+              "addIgnoreWord": true,
+              "addIssuesToDictionary": true,
+              "addWordToCSpellConfig": true,
+              "addWordToDictionary": true,
+              "addWordToFolderDictionary": true,
+              "addWordToFolderSettings": true,
+              "addWordToUserDictionary": true,
+              "addWordToUserSettings": true,
+              "addWordToWorkspaceDictionary": true,
+              "addWordToWorkspaceSettings": true,
+              "suggestSpellingCorrections": true
+            },
+            "markdownDescription": "Control which menu items are shown on the Spelling Context Menu.",
+            "properties": {
+              "addIgnoreWord": {
+                "markdownDescription": "Enable Menu Item: Ignore Word",
+                "type": "boolean"
+              },
+              "addIssuesToDictionary": {
+                "markdownDescription": "Enable Menu Item: Add All Spelling Issues to Dictionary",
+                "type": "boolean"
+              },
+              "addWordToCSpellConfig": {
+                "markdownDescription": "Enable Menu Item: Add Word to CSpell Configuration",
+                "type": "boolean"
+              },
+              "addWordToDictionary": {
+                "markdownDescription": "Enable Menu Item: Add Word to Dictionary",
+                "type": "boolean"
+              },
+              "addWordToFolderDictionary": {
+                "markdownDescription": "Enable Menu Item: Add Word to Folder Dictionary",
+                "type": "boolean"
+              },
+              "addWordToFolderSettings": {
+                "markdownDescription": "Enable Menu Item: Add Word to Folder Settings",
+                "type": "boolean"
+              },
+              "addWordToUserDictionary": {
+                "markdownDescription": "Enable Menu Item: Add Word to User Dictionary",
+                "type": "boolean"
+              },
+              "addWordToUserSettings": {
+                "markdownDescription": "Enable Menu Item: Add Word to User Settings",
+                "type": "boolean"
+              },
+              "addWordToWorkspaceDictionary": {
+                "markdownDescription": "Enable Menu Item: Add Word to Workspace Dictionary",
+                "type": "boolean"
+              },
+              "addWordToWorkspaceSettings": {
+                "markdownDescription": "Enable Menu Item: Add Word to Workspace Settings",
+                "type": "boolean"
+              },
+              "suggestSpellingCorrections": {
+                "markdownDescription": "Enable Menu Item: Spelling Suggestions...",
+                "type": "boolean"
+              }
+            },
+            "scope": "resource",
+            "type": "object"
+          },
+          "cSpell.showCommandsInEditorContextMenu": {
+            "default": true,
+            "markdownDescription": "Show Spell Checker actions in Editor Context Menu",
+            "scope": "resource",
+            "type": "boolean"
+          },
+          "cSpell.showSuggestionsLinkInEditorContextMenu": {
+            "default": true,
+            "markdownDescription": "Show Spelling Suggestions link in the top level context menu.",
+            "scope": "resource",
+            "type": "boolean"
+          },
+          "cSpell.suggestionMenuType": {
+            "default": "quickPick",
+            "enum": [
+              "quickPick",
+              "quickFix"
+            ],
+            "enumDescriptions": [
+              "Suggestions will appear as a drop down at the top of the IDE. (Best choice for Vim Key Bindings)",
+              "Suggestions will appear inline near the word, inside the text editor."
+            ],
+            "markdownDescription": "The type of menu used to display spelling suggestions.",
+            "scope": "resource",
+            "type": "string"
+          }
+        },
+        "title": "Menus and Actions",
         "type": "object"
       },
       {
@@ -4496,12 +5050,6 @@
             "title": "Enabled Notifications",
             "type": "object"
           },
-          "cSpell.hideAddToDictionaryCodeActions": {
-            "default": false,
-            "markdownDescription": "Hide the options to add words to dictionaries or settings.",
-            "scope": "resource",
-            "type": "boolean"
-          },
           "cSpell.hideIssuesWhileTyping": {
             "default": "Word",
             "enum": [
@@ -4558,37 +5106,22 @@
             "scope": "language-overridable",
             "type": "boolean"
           },
-          "cSpell.showCommandsInEditorContextMenu": {
-            "default": true,
-            "markdownDescription": "Show Spell Checker actions in Editor Context Menu",
-            "scope": "application",
-            "type": "boolean"
-          },
-          "cSpell.showSuggestionsLinkInEditorContextMenu": {
-            "default": true,
-            "markdownDescription": "Show Spelling Suggestions link in the top level context menu.",
-            "scope": "application",
-            "type": "boolean"
-          },
-          "cSpell.suggestionMenuType": {
-            "default": "quickPick",
-            "enum": [
-              "quickPick",
-              "quickFix"
-            ],
-            "enumDescriptions": [
-              "Suggestions will appear as a drop down at the top of the IDE. (Best choice for Vim Key Bindings)",
-              "Suggestions will appear inline near the word, inside the text editor."
-            ],
-            "markdownDescription": "The type of menu used to display spelling suggestions.",
-            "scope": "resource",
-            "type": "string"
-          },
           "cSpell.suggestionNumChanges": {
             "default": 3,
             "markdownDescription": "The maximum number of changes allowed on a word to be considered a suggestions.\n\nFor example, appending an `s` onto `example` -> `examples` is considered 1 change.\n\nRange: between 1 and 5.",
             "scope": "resource",
             "type": "number"
+          },
+          "cSpell.unknownWords": {
+            "enum": [
+              "report-all",
+              "report-simple",
+              "report-common-typos",
+              "report-flagged"
+            ],
+            "markdownDescription": "Controls how unknown words are handled.\n\n- `report-all` - Report all unknown words (default behavior)\n- `report-simple` - Report unknown words that have simple spelling errors, typos, and flagged words.\n- `report-common-typos` - Report unknown words that are common typos and flagged words.\n- `report-flagged` - Report unknown words that are flagged.",
+            "scope": "resource",
+            "type": "string"
           },
           "cSpell.validateDirectives": {
             "markdownDescription": "Verify that the in-document directives are correct.",
@@ -4597,6 +5130,21 @@
           }
         },
         "title": "Reporting and Display",
+        "type": "object"
+      },
+      {
+        "additionalProperties": false,
+        "markdownDescription": "Settings that control the behavior of the spell checker.",
+        "order": 0,
+        "properties": {
+          "cSpell.enabled": {
+            "default": true,
+            "markdownDescription": "Enable / Disable the spell checker.",
+            "scope": "resource",
+            "type": "boolean"
+          }
+        },
+        "title": "Code Spell Checker",
         "type": "object"
       }
     ],
@@ -4652,52 +5200,52 @@
     "lint-docs": "prettier -w website",
     "lint-docs-ci": "prettier -c website",
     "test-client-integration": "npm --workspace=@internal/integration-tests run test-integration",
-    "test": "npm --workspaces --if-present run test && echo OK",
-    "update-cspell": "npx npm-check-updates --root -ws --target semver -u \"cspell*\" \"@cspell/*\"  && npm i",
+    "test": "npm --workspaces --if-present run test && echo OK || (echo Failed && exit 1)",
+    "test:run": "vitest run",
+    "update-cspell": "npx npm-check-updates --root -w -s --target semver -u \"cspell*\" \"@cspell/*\"  && npm i",
     "update-packages": "npm run update:packages:root && npm run update:packages:website",
-    "update:packages:root": "npx npm-check-updates --root -ws --target semver -u && npm i",
+    "update:packages:root": "npx npm-check-updates --root -w -s --target semver -u && npm i",
     "update:packages:website": "cd website && npm run update-packages",
     "postinstall": "patch-package"
   },
   "devDependencies": {
     "@arethetypeswrong/cli": "^0.18.5",
     "@eslint/js": "~10.0.1",
+    "@internal/vitest-config": "file:./tools/vitest-config",
     "@tsconfig/node22": "^22.0.6",
-    "@types/node": "^22.20.1",
+    "@types/node": "^22.20.2",
     "@types/vscode": "1.104.0",
     "@types/vscode-webview": "^1.57.5",
-    "@vitest/coverage-istanbul": "~4.1.11",
     "@vscode/vsce": "^3.9.2",
     "ansi-styles": "^7.0.0",
+    "build-tools": "file:./tools/build-tools",
     "chokidar-cli": "^3.0.0",
     "concurrently": "^10.0.5",
-    "cspell": "^10.2.2",
+    "cspell": "^10.3.1",
     "esbuild": "^0.28.2",
-    "eslint": "~10.9.1",
+    "eslint": "~10.10.0",
     "eslint-plugin-n": "^18.3.0",
     "eslint-plugin-simple-import-sort": "^14.0.0",
     "eslint-plugin-unicorn": "^74.0.0",
-    "globals": "^17.11.0",
+    "globals": "^17.12.0",
     "inject-markdown": "^5.0.3",
     "jest-mock-vscode": "^4.13.0",
-    "ovsx": "^1.1.1",
+    "ovsx": "^1.2.0",
     "patch-package": "^8.0.1",
     "prettier": "^3.9.6",
     "prettier-plugin-svelte": "^4.1.1",
     "rollup": "^4.63.1",
     "rollup-plugin-dts": "^6.5.1",
     "shx": "^0.4.0",
-    "tsdown": "^0.22.14",
+    "tsdown": "^0.23.0",
     "tsup": "^8.5.1",
     "typescript": "~5.9.3",
-    "typescript-eslint": "^8.69.0",
-    "vite": "^8.2.2",
-    "vitest": "~4.1.11"
+    "typescript-eslint": "^8.70.0"
   },
   "dependencies": {
-    "@cspell/cspell-bundled-dicts": "^10.2.2",
-    "@cspell/cspell-types": "^10.2.2",
-    "@cspell/dict-cspell-bundle": "^2.0.72",
+    "@cspell/cspell-bundled-dicts": "^10.3.1",
+    "@cspell/cspell-types": "^10.3.1",
+    "@cspell/dict-cspell-bundle": "^2.0.75",
     "regexp-worker": "^5.0.1"
   },
   "overrides": {

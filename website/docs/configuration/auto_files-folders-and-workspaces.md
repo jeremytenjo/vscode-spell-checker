@@ -1,6 +1,6 @@
 ---
 # AUTO-GENERATED ALL CHANGES WILL BE LOST
-# See `_scripts/extract-config.mjs`
+# See `_scripts/extract-config.mts`
 title: Files, Folders, and Workspaces
 id: files-folders-and-workspaces
 ---
@@ -10,23 +10,284 @@ id: files-folders-and-workspaces
 Settings that control which files and folders are spell checked.
 
 
-| Setting | Scope | Description |
-| ------- | ----- | ----------- |
-| [`cSpell.checkOnlyEnabledFileTypes`](#cspellcheckonlyenabledfiletypes) | resource | Check Only Enabled File Types |
-| [`cSpell.checkVSCodeSystemFiles`](#cspellcheckvscodesystemfiles) | application | Spell check VS Code system files. These include: |
-| [`cSpell.enabledFileTypes`](#cspellenabledfiletypes) | resource | Enabled File Types to Check |
-| [`cSpell.enabledSchemes`](#cspellenabledschemes) | window | Specify Allowed Schemes |
-| [`cSpell.files`](#cspellfiles) | resource | Glob patterns of files to be checked |
-| [`cSpell.globRoot`](#cspellglobroot) | resource | The root to use for glob patterns found in this configuration. Default: The current workspace… |
-| [`cSpell.ignorePaths`](#cspellignorepaths) | resource | Glob patterns of files to be ignored |
-| [`cSpell.import`](#cspellimport) | resource | Allows this configuration to inherit configuration for one or more other files. |
-| [`cSpell.mergeCSpellSettings`](#cspellmergecspellsettings) | resource | Specify if fields from `.vscode/settings.json` are passed to the spell checker. This only applies… |
-| [`cSpell.mergeCSpellSettingsFields`](#cspellmergecspellsettingsfields) | resource | Specify which fields from `.vscode/settings.json` are passed to the spell checker. This only… |
-| [`cSpell.noConfigSearch`](#cspellnoconfigsearch) | resource | Prevents searching for local configuration when checking individual documents. |
-| [`cSpell.spellCheckOnlyWorkspaceFiles`](#cspellspellcheckonlyworkspacefiles) | window | Spell Check Only Workspace Files |
-| [`cSpell.useGitignore`](#cspellusegitignore) | resource | Tells the spell checker to load `.gitignore` files and skip files that match the globs in the… |
-| [`cSpell.usePnP`](#cspellusepnp) | resource | Packages managers like Yarn 2 use a `.pnp.cjs` file to assist in loading packages stored in… |
-| [`cSpell.workspaceRootPath`](#cspellworkspacerootpath) | resource | Workspace Root Folder Path |
+<table>
+<thead>
+<tr>
+<th>
+
+Setting
+
+</th>
+<th>
+
+Scope
+
+</th>
+<th>
+
+Description
+
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+
+[`cSpell.checkOnlyEnabledFileTypes`](#cspellcheckonlyenabledfiletypes)
+
+</td>
+<td>
+
+resource
+
+</td>
+<td>
+
+Check Only Enabled File Types
+
+</td>
+</tr>
+<tr>
+<td>
+
+[`cSpell.checkVSCodeSystemFiles`](#cspellcheckvscodesystemfiles)
+
+</td>
+<td>
+
+application
+
+</td>
+<td>
+
+Spell check VS Code system files. These include:
+
+</td>
+</tr>
+<tr>
+<td>
+
+[`cSpell.enabledFileTypes`](#cspellenabledfiletypes)
+
+</td>
+<td>
+
+resource
+
+</td>
+<td>
+
+Enabled File Types to Check
+
+</td>
+</tr>
+<tr>
+<td>
+
+[`cSpell.enabledSchemes`](#cspellenabledschemes)
+
+</td>
+<td>
+
+window
+
+</td>
+<td>
+
+Specify Allowed Schemes
+
+</td>
+</tr>
+<tr>
+<td>
+
+[`cSpell.files`](#cspellfiles)
+
+</td>
+<td>
+
+resource
+
+</td>
+<td>
+
+Glob patterns of files to be checked
+
+</td>
+</tr>
+<tr>
+<td>
+
+[`cSpell.globRoot`](#cspellglobroot)
+
+</td>
+<td>
+
+resource
+
+</td>
+<td>
+
+The root to use for glob patterns found in this configuration. Default: The current workspace…
+
+</td>
+</tr>
+<tr>
+<td>
+
+[`cSpell.ignorePaths`](#cspellignorepaths)
+
+</td>
+<td>
+
+resource
+
+</td>
+<td>
+
+Glob patterns of files to be ignored
+
+</td>
+</tr>
+<tr>
+<td>
+
+[`cSpell.import`](#cspellimport)
+
+</td>
+<td>
+
+resource
+
+</td>
+<td>
+
+Allows this configuration to inherit configuration for one or more other files.
+
+</td>
+</tr>
+<tr>
+<td>
+
+[`cSpell.mergeCSpellSettings`](#cspellmergecspellsettings)
+
+</td>
+<td>
+
+resource
+
+</td>
+<td>
+
+Specify if fields from `.vscode/settings.json` are passed to the spell checker. This only applies…
+
+</td>
+</tr>
+<tr>
+<td>
+
+[`cSpell.mergeCSpellSettingsFields`](#cspellmergecspellsettingsfields)
+
+</td>
+<td>
+
+resource
+
+</td>
+<td>
+
+Specify which fields from `.vscode/settings.json` are passed to the spell checker. This only…
+
+</td>
+</tr>
+<tr>
+<td>
+
+[`cSpell.noConfigSearch`](#cspellnoconfigsearch)
+
+</td>
+<td>
+
+resource
+
+</td>
+<td>
+
+Prevents searching for local configuration when checking individual documents.
+
+</td>
+</tr>
+<tr>
+<td>
+
+[`cSpell.spellCheckOnlyWorkspaceFiles`](#cspellspellcheckonlyworkspacefiles)
+
+</td>
+<td>
+
+window
+
+</td>
+<td>
+
+Spell Check Only Workspace Files
+
+</td>
+</tr>
+<tr>
+<td>
+
+[`cSpell.useGitignore`](#cspellusegitignore)
+
+</td>
+<td>
+
+resource
+
+</td>
+<td>
+
+Tells the spell checker to load `.gitignore` files and skip files that match the globs in the…
+
+</td>
+</tr>
+<tr>
+<td>
+
+[`cSpell.usePnP`](#cspellusepnp)
+
+</td>
+<td>
+
+resource
+
+</td>
+<td>
+
+Packages managers like Yarn 2 use a `.pnp.cjs` file to assist in loading packages stored in…
+
+</td>
+</tr>
+<tr>
+<td>
+
+[`cSpell.workspaceRootPath`](#cspellworkspacerootpath)
+
+</td>
+<td>
+
+resource
+
+</td>
+<td>
+
+Workspace Root Folder Path
+
+</td>
+</tr>
+</tbody>
+</table>
 
 
 ## Settings
@@ -189,7 +450,7 @@ Type
 </dt>
 <dd>
 
-`object`
+[`EnabledFileTypes`](#enabledfiletypes)
 
 </dd>
 
@@ -207,7 +468,12 @@ Default
 </dt>
 <dd>
 
-_`{"*":true,"markdown":true}`_
+```json5 title="default"
+{
+  "*": true,
+  "markdown": true
+}
+```
 
 </dd>
 
@@ -260,7 +526,7 @@ Type
 </dt>
 <dd>
 
-`object`
+[`EnabledSchemes`](#enabledschemes)
 
 </dd>
 
@@ -278,11 +544,11 @@ Default
 </dt>
 <dd>
 
-```json5
+```json5 title="default"
 {
-"chatSessionInput": true, "comment": true, "file": true, "gist": true, "repo":
-true, "sftp": true, "untitled": true, "vscode-notebook-cell": true,
-"vscode-scm": true, "vscode-userdata": true, "vscode-vfs": true, "vsls": true
+  "chatSessionInput": true, "comment": true, "file": true, "gist": true,
+  "repo": true, "sftp": true, "untitled": true, "vscode-notebook-cell": true,
+  "vscode-scm": true, "vscode-userdata": true, "vscode-vfs": true, "vsls": true
 }
 ```
 
@@ -455,11 +721,15 @@ Default
 </dt>
 <dd>
 
-```json5
+```json5 title="default"
 [
-"package-lock.json", "node_modules", "vscode-extension",
-".git/{info,lfs,logs,refs,objects}/**", ".git/{index,*refs,*HEAD}", ".vscode",
-".vscode-insiders"
+  "package-lock.json",
+  "node_modules",
+  "vscode-extension",
+  ".git/{info,lfs,logs,refs,objects}/**",
+  ".git/{index,*refs,*HEAD}",
+  ".vscode",
+  ".vscode-insiders"
 ]
 ```
 
@@ -636,7 +906,7 @@ Type
 </dt>
 <dd>
 
-`object`
+[`CSpellMergeFields`](#cspellmergefields)
 
 </dd>
 
@@ -654,18 +924,20 @@ Default
 </dt>
 <dd>
 
-```json5
+```json5 title="default"
 {
-"allowCompoundWords": true, "caseSensitive": true, "dictionaries": true,
-"dictionaryDefinitions": true, "enableGlobDot": true, "features": true,
-"files": true, "flagWords": true, "gitignoreRoot": true, "globRoot": true,
-"ignorePaths": true, "ignoreRegExpList": true, "ignoreWords": true, "import":
-true, "includeRegExpList": true, "language": true, "languageId": true,
-"languageSettings": true, "loadDefaultConfiguration": true, "minWordLength":
-true, "noConfigSearch": true, "noSuggestDictionaries": true, "numSuggestions":
-true, "overrides": true, "patterns": true, "pnpFiles": true, "reporters": true,
-"suggestWords": true, "useGitignore": true, "usePnP": true, "userWords": true,
-"validateDirectives": true, "words": true
+  "allowCompoundWords": true, "caseSensitive": true, "dictionaries": true,
+  "dictionaryDefinitions": true, "enableGlobDot": true, "features": true,
+  "files": true, "flagWords": true, "gitignoreRoot": true, "globRoot": true,
+  "ignorePaths": true, "ignoreRegExpList": true, "ignoreWords": true,
+  "import": true, "includeRegExpList": true, "language": true,
+  "languageId": true, "languageSettings": true,
+  "loadDefaultConfiguration": true, "minWordLength": true,
+  "noConfigSearch": true, "noSuggestDictionaries": true,
+  "numSuggestions": true, "overrides": true, "patterns": true,
+  "pnpFiles": true, "reporters": true, "suggestWords": true,
+  "useGitignore": true, "usePnP": true, "userWords": true,
+  "validateDirectives": true, "words": true
 }
 ```
 
@@ -1024,7 +1296,7 @@ Deprecation Message
 </dt>
 <dd>
 
-- Use `#cSpell.enabledSchemes#` instead.
+- Use [`cSpell.enabledSchemes`](files-folders-and-workspaces#cspellenabledschemes) instead.
 
 </dd>
 
@@ -1105,7 +1377,7 @@ Deprecation Message
 </dt>
 <dd>
 
-- Use `#cSpell.enabledFileTypes#` instead.
+- Use [`cSpell.enabledFileTypes`](files-folders-and-workspaces#cspellenabledfiletypes) instead.
 
 </dd>
 
@@ -1121,5 +1393,222 @@ _- none -_
 </dl>
 
 ---
+
+
+## Type Definitions
+
+
+### `EnabledFileTypes`
+
+<dl>
+
+<dt>
+Name
+</dt>
+<dd>
+
+EnabledFileTypes
+
+</dd>
+
+<dt>
+Description
+</dt>
+<dd>
+
+Enable / Disable checking file types (languageIds).
+
+This setting replaces: [`cSpell.enabledLanguageIds`](legacy#cspellenabledlanguageids) and [`cSpell.enableFiletypes`](files-folders-and-workspaces#cspellenablefiletypes).
+
+A Value of:
+- `true` - enable checking for the file type
+- `false` - disable checking for the file type
+
+A file type of `*` is a wildcard that enables all file types.
+
+**Example: enable all file types**
+
+| File Type | Enabled | Comment |
+| --------- | ------- | ------- |
+| `*`       | `true`  | Enable all file types. |
+| `json`    | `false` | Disable checking for json files. |
+
+</dd>
+
+<dt>
+Type
+</dt>
+<dd>
+
+```ts
+{
+  [key: string]: boolean;
+}
+```
+
+</dd>
+
+</dl>
+
+---
+
+
+### `EnabledSchemes`
+
+<dl>
+
+<dt>
+Name
+</dt>
+<dd>
+
+EnabledSchemes
+
+</dd>
+
+<dt>
+Description
+</dt>
+<dd>
+
+Control which file schemes will be checked for spelling (VS Code must be restarted for this setting to take effect).
+
+Some schemes have special meaning like:
+- `untitled` - Used for new documents that have not yet been saved
+- `vscode-notebook-cell` - Used for validating segments of a Notebook.
+- `vscode-userdata` - Needed to spell check `.code-snippets`
+- `vscode-scm` - Needed to spell check Source Control commit messages.
+- `comment` - Used for new comment editors.
+
+A scheme of `*` is a wildcard that enables all schemes without an explicit entry.
+This is useful for virtual file systems provided by other extensions.
+
+**Example: enable all schemes**
+
+| Scheme | Enabled | Comment |
+| ------ | ------- | ------- |
+| `*`    | `true`  | Enable all schemes. |
+| `git`  | `false` | Do not check documents provided by the `git` file system. |
+
+</dd>
+
+<dt>
+Type
+</dt>
+<dd>
+
+```ts
+{
+  [key: string]: boolean;
+}
+```
+
+</dd>
+
+</dl>
+
+---
+
+
+### `CSpellMergeFields`
+
+<dl>
+
+<dt>
+Name
+</dt>
+<dd>
+
+CSpellMergeFields
+
+</dd>
+
+<dt>
+Description
+</dt>
+<dd>
+
+Specify which fields from `.vscode/settings.json` are passed to the spell checker.
+This only applies when there is a CSpell configuration file in the workspace and
+[`cSpell.mergeCSpellSettings`](files-folders-and-workspaces#cspellmergecspellsettings) is `true`.
+
+Values:
+- `{ flagWords: true, userWords: false }` - Always allow `flagWords`, but never allow `userWords`.
+
+Example:
+```json5
+"cSpell.mergeCSpellSettingsFields": { "userWords": false }
+```
+
+</dd>
+
+<dt>
+Type
+</dt>
+<dd>
+
+<details>
+<summary>
+
+TypeScript:
+
+</summary>
+
+```ts
+{
+  allowCompoundWords?: boolean;
+  caseSensitive?: boolean;
+  dictionaries?: boolean;
+  dictionaryDefinitions?: boolean;
+  enableGlobDot?: boolean;
+  features?: boolean;
+  files?: boolean;
+  flagWords?: boolean;
+  gitignoreRoot?: boolean;
+  globRoot?: boolean;
+  ignorePaths?: boolean;
+  ignoreRegExpList?: boolean;
+  ignoreWords?: boolean;
+  import?: boolean;
+  includeRegExpList?: boolean;
+  language?: boolean;
+  languageId?: boolean;
+  languageSettings?: boolean;
+  loadDefaultConfiguration?: boolean;
+  minWordLength?: boolean;
+  noConfigSearch?: boolean;
+  noSuggestDictionaries?: boolean;
+  numSuggestions?: boolean;
+  overrides?: boolean;
+  patterns?: boolean;
+  pnpFiles?: boolean;
+  reporters?: boolean;
+  suggestWords?: boolean;
+  useGitignore?: boolean;
+  usePnP?: boolean;
+  userWords?: boolean;
+  validateDirectives?: boolean;
+  words?: boolean;
+}
+```
+
+</details>
+
+</dd>
+
+<dt>
+Since Extension Version
+</dt>
+<dd>
+
+4.0.0
+
+</dd>
+
+</dl>
+
+---
+
+
 
 

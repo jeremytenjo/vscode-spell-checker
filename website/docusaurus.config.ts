@@ -2,6 +2,8 @@ import { themes as prismThemes } from 'prism-react-renderer';
 import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
+const isStrict = false; // process.env.DOCUSAURUS_STRICT === 'true';
+
 const config: Config = {
     title: 'VS Code Spell Checker',
     tagline: 'A spell checker for VS Code!',
@@ -21,7 +23,6 @@ const config: Config = {
     trailingSlash: false,
 
     onBrokenLinks: 'throw',
-    onBrokenMarkdownLinks: 'warn',
 
     // Even if you don't use internationalization, you can use this field to set
     // useful metadata like html lang. For example, if your site is Chinese, you
@@ -32,8 +33,19 @@ const config: Config = {
     },
 
     markdown: {
-        // format: 'detect',
+        hooks: {
+            onBrokenMarkdownLinks: 'warn',
+        },
     },
+
+    plugins: [
+        [
+            '@docusaurus/plugin-client-redirects',
+            {
+                redirects: [{ to: '/docs/reference', from: '/readme' }],
+            },
+        ],
+    ],
 
     presets: [
         [
@@ -43,7 +55,7 @@ const config: Config = {
                     sidebarPath: './sidebars.ts',
                     // Please change this to your repo.
                     // Remove this to remove the "edit this page" links.
-                    editUrl: 'https://github.com/streetsidesoftware/vscode-spell-checker/tree/main/website/docs',
+                    editUrl: 'https://github.com/streetsidesoftware/vscode-spell-checker/tree/main/website',
                 },
                 // blog: {
                 //   showReadingTime: true,
@@ -76,6 +88,7 @@ const config: Config = {
             },
             items: [
                 { label: 'Home', href: 'https://streetsidesoftware.com', position: 'left' },
+                { to: '/docs/getting-started/install', label: 'Get Started', position: 'left' },
                 {
                     type: 'docSidebar',
                     sidebarId: 'docs',
@@ -128,8 +141,8 @@ const config: Config = {
         },
         prism: {
             theme: prismThemes.github,
-            darkTheme: prismThemes.dracula,
-            additionalLanguages: ['json', 'json5', 'bash'],
+            darkTheme: prismThemes.vsDark,
+            additionalLanguages: ['json5', 'bash', 'javascript', 'typescript', 'yaml'],
         },
     } satisfies Preset.ThemeConfig,
 
@@ -139,6 +152,7 @@ const config: Config = {
             'data-domain': 'streetsidesoftware.com',
             src: 'https://plausible.io/js/script.js',
         },
+        '/vscode-spell-checker/js/legacy-anchor-redirect.js',
     ],
 };
 
