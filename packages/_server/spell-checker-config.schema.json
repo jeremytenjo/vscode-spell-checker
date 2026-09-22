@@ -4241,11 +4241,11 @@
         },
         "cSpell.spellCheckTriggerCharacters": {
           "default": [],
-          "description": "Characters that trigger spell checking after a document change. When set, changes that do not contain one of these characters are not checked.\n\n **Example:** check after spaces or new lines  ```json  \"cSpell.spellCheckTriggerCharacters\": [\" \", \"\\n\"]  ```\n\n Letter-only edits use the configured spell-check delay; matching characters trigger an immediate check.",
+          "description": "Characters that trigger spell checking after a document change.\n\n**Example:** check after spaces or new lines ```json \"cSpell.spellCheckTriggerCharacters\": [\" \", \"\\n\"] ```\n\nEdits that do not contain one of the trigger characters use the configured delay defined in `#cSpell.spellCheckDelayMs#`, while matching edits trigger an immediate check.",
           "items": {
             "type": "string"
           },
-          "markdownDescription": "Characters that trigger spell checking after a document change.\nWhen set, changes that do not contain one of these characters are not checked.\n\n **Example:** check after spaces or new lines\n ```json\n \"cSpell.spellCheckTriggerCharacters\": [\" \", \"\\n\"]\n ```\n\n Letter-only edits use the configured spell-check delay; matching characters trigger an immediate check.",
+          "markdownDescription": "Characters that trigger spell checking after a document change.\n\n**Example:** check after spaces or new lines\n```json\n\"cSpell.spellCheckTriggerCharacters\": [\" \", \"\\n\"]\n```\n\nEdits that do not contain one of the trigger characters use the configured delay defined in\n`#cSpell.spellCheckDelayMs#`, while matching edits trigger an immediate check.",
           "scope": "application",
           "type": "array"
         },

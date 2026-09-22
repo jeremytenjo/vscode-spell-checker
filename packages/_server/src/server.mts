@@ -5,8 +5,8 @@ import type { CSpellSettingsWithSourceTrace, Glob } from 'cspell-lib';
 import * as CSpell from 'cspell-lib';
 import { extractImportErrors, getDefaultSettings, refreshDictionaryCache } from 'cspell-lib';
 import type { Subscription } from 'rxjs';
-import { interval, ReplaySubject } from 'rxjs';
-import { debounceTime, filter, mergeMap, take, tap, throttle, throttleTime } from 'rxjs/operators';
+import { interval, of, ReplaySubject } from 'rxjs';
+import { debounceTime, filter, map, mergeMap, switchMap, take, tap, throttle, throttleTime } from 'rxjs/operators';
 import type { DisposableLike } from 'utils-disposables';
 import { createDisposableList } from 'utils-disposables';
 import { LogLevelMasks } from 'utils-logger';
@@ -81,19 +81,11 @@ const defaultDebounceMs = 50;
 // Refresh the dictionary cache every 1000ms.
 const dictionaryRefreshRateMs = 10000;
 
-export function containsSpellCheckTrigger(text: string, triggerCharacters: string[] | undefined): boolean {
-    return !!triggerCharacters?.length && triggerCharacters.some((character) => text.includes(character));
-}
-
-export function shouldTriggerSpellCheck(
+export function changesHaveTriggerCharacters(
     contentChanges: readonly { text: string }[] | undefined,
     triggerCharacters: string[] | undefined,
 ): boolean {
-    return (
-        !contentChanges ||
-        !triggerCharacters?.length ||
-        contentChanges.some(({ text }) => containsSpellCheckTrigger(text, triggerCharacters))
-    );
+    return !!contentChanges?.some(({ text }) => triggerCharacters?.some((character) => text.includes(character)));
 }
 
 export function getSpellCheckDelayMs(
@@ -101,7 +93,9 @@ export function getSpellCheckDelayMs(
     triggerCharacters: string[] | undefined,
     spellCheckDelayMs: number | undefined,
 ): number {
-    return contentChanges && triggerCharacters?.length ? 0 : spellCheckDelayMs || defaultDebounceMs;
+    const delayMs = spellCheckDelayMs || defaultDebounceMs;
+    if (!triggerCharacters?.length) return delayMs;
+    return !contentChanges || changesHaveTriggerCharacters(contentChanges, triggerCharacters) ? 0 : delayMs;
 }
 
 async function calcDefaultSettings(): Promise<CSpellUserAndExtensionSettings> {
@@ -290,17 +284,31 @@ export function run(): void {
                                 settings: await getActiveSettings(request.document),
                             })),
                             tap((dsp) => progressNotifier.emitSpellCheckDocumentStep(dsp.doc, 'settings determined')),
-                            filter(({ contentChanges, settings }) =>
-                                shouldTriggerSpellCheck(contentChanges, settings.spellCheckTriggerCharacters),
-                            ),
+                            map((dsp) => ({
+                                ...dsp,
+                                noDelay:
+                                    getSpellCheckDelayMs(
+                                        dsp.contentChanges,
+                                        dsp.settings.spellCheckTriggerCharacters,
+                                        dsp.settings.spellCheckDelayMs,
+                                    ) === 0,
+                            })),
+                            switchMap((dsp) => {
+                                const triggerCharacters = dsp.settings.spellCheckTriggerCharacters;
+                                if (!triggerCharacters?.length || dsp.noDelay) return of(dsp);
+
+                                return interval(dsp.settings.spellCheckDelayMs || defaultDebounceMs).pipe(
+                                    filter(() => !isValidationBusy),
+                                    take(1),
+                                    map(() => dsp),
+                                );
+                            }),
                             throttle(
                                 (dsp) =>
                                     interval(
-                                        getSpellCheckDelayMs(
-                                            dsp.contentChanges,
-                                            dsp.settings.spellCheckTriggerCharacters,
-                                            dsp.settings.spellCheckDelayMs,
-                                        ),
+                                        dsp.settings.spellCheckTriggerCharacters?.length
+                                            ? 0
+                                            : dsp.settings.spellCheckDelayMs || defaultDebounceMs,
                                     ).pipe(filter(() => !isValidationBusy)),
                                 { leading: true, trailing: true },
                             ),

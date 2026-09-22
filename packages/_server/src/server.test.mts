@@ -1,6 +1,6 @@
 import { describe, expect, test } from 'vitest';
 
-import { getSpellCheckDelayMs, run, shouldTriggerSpellCheck } from './server.mjs';
+import { changesHaveTriggerCharacters, getSpellCheckDelayMs, run } from './server.mjs';
 
 describe('Validate Server', () => {
     test('run', () => {
@@ -8,24 +8,33 @@ describe('Validate Server', () => {
         expect(run).toBeDefined();
     });
 
-    test('does not trigger for letter-only edits', () => {
-        expect(shouldTriggerSpellCheck([{ text: 'a' }], [' ', '\n'])).toBe(false);
+    test('delays letter-only edits when trigger characters are configured', () => {
+        expect(changesHaveTriggerCharacters([{ text: 'a' }], [' ', '\n'])).toBe(false);
+        expect(getSpellCheckDelayMs([{ text: 'a' }], [' ', '\n'], 250)).toBe(250);
     });
 
-    test('triggers for a space edit', () => {
-        expect(shouldTriggerSpellCheck([{ text: 'word ' }], [' ', '\n'])).toBe(true);
+    test('does not delay a space edit', () => {
+        expect(changesHaveTriggerCharacters([{ text: 'word ' }], [' ', '\n'])).toBe(true);
+        expect(getSpellCheckDelayMs([{ text: 'word ' }], [' ', '\n'], 250)).toBe(0);
     });
 
-    test('triggers for a newline edit', () => {
-        expect(shouldTriggerSpellCheck([{ text: '\n' }], [' ', '\n'])).toBe(true);
+    test('does not delay a newline edit', () => {
+        expect(changesHaveTriggerCharacters([{ text: '\n' }], [' ', '\n'])).toBe(true);
+        expect(getSpellCheckDelayMs([{ text: '\n' }], [' ', '\n'], 250)).toBe(0);
     });
 
     test('checks all changes in a multi-change edit', () => {
-        expect(shouldTriggerSpellCheck([{ text: ' ' }, { text: 'word' }], [' ', '\n'])).toBe(true);
+        expect(changesHaveTriggerCharacters([{ text: ' ' }, { text: 'word' }], [' ', '\n'])).toBe(true);
+        expect(getSpellCheckDelayMs([{ text: ' ' }, { text: 'word' }], [' ', '\n'], 250)).toBe(0);
+    });
+
+    test('does not delay validation requests without content changes', () => {
+        expect(changesHaveTriggerCharacters(undefined, [' ', '\n'])).toBe(false);
+        expect(getSpellCheckDelayMs(undefined, [' ', '\n'], 250)).toBe(0);
     });
 
     test('an empty trigger list preserves the configured delay', () => {
-        expect(shouldTriggerSpellCheck([{ text: 'a' }], [])).toBe(true);
+        expect(changesHaveTriggerCharacters([{ text: 'a' }], [])).toBe(false);
         expect(getSpellCheckDelayMs([{ text: 'a' }], [], 250)).toBe(250);
     });
 });
